@@ -10,7 +10,20 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: "#1F68F6",
+        secondary: "#011632",
+        back_white: "#f4f4f4",
       },
+      animation: {
+				'infinite-scroll': 'infinite-scroll 25s linear infinite',
+			},
+			keyframes: {
+				'infinite-scroll': {
+					from: { transform: 'translateX(0)' },
+					to: { transform: 'translateX(-100%)' },
+				},
+				
+			},
     },
   },
   plugins: [],

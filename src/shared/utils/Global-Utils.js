@@ -4,22 +4,22 @@ export const DevTools = [
 	{
 		id: uuid(),
 		name: 'Mapfre',
-		icon: 'https://mapfresaludars.com.do/wp-content/uploads/2020/08/mapfred-logo-color.svg',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	},
 	{
 		id: uuid(),
 		name: 'JavaScript',
-		icon: 'https://humanoapp.com/assets/img/logo_humano.svg',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	},
 	{
 		id: uuid(),
 		name: 'ARS simag',
-		icon: 'https://autorizaciones.arssimag.com.do/Autorizaciones/image/logoARS_SIMAG.png',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	},
 	{
 		id: uuid(),
 		name: 'ARS Universal',
-		icon: '	https://www.arsuniversal.com.do/media/wngitznk/636a7a03a7ac130e95a16ea1_websitearsuniversal-01.svg',
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	},
 	// {
 	// 	id: uuid(),
@@ -29,12 +29,12 @@ export const DevTools = [
 	{
 		id: uuid(),
 		name: 'ARS Renacer',
-		icon: 'https://arsrenacer.com/wp-content/uploads/2023/10/logo_new-ARS.png'
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	},
 	{
 		id: uuid(),
 		name: 'Primera ARS humano',
-		icon: 'https://www.arsprimera.com/_catalogs/masterpage/PrimeraARS/assets/img/logo.png'
+		icon: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Logo_de_Claro.svg/800px-Logo_de_Claro.svg.png',
 	}
 	
 ]

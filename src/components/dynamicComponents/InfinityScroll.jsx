@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { DevTools } from "../../shared/utils/Global-Utils";
 import Image from "next/image";
+
 
 const InfinityScroll = () => {
 
@@ -21,12 +24,13 @@ const InfinityScroll = () => {
     >
       <ul className={`infinity flex  justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll`}>
         {DevTools.map((tool) => (
-          <li key={tool.id} className="mx-8 cursor-pointer">
+          <li key={tool.id} className="mx-8 cursor-pointer min-w-52 min-h-14 relative">
             <Image
-              className={`min-w-14 h-9 grayscale object-fill hover:grayscale-0`}
+              className={`grayscale object-fill hover:grayscale-0 relative`}
               src={tool.icon}
               alt={tool.name}
               title={tool.name}
+              layout="fill"
             />
           </li>
         ))}
@@ -34,12 +38,14 @@ const InfinityScroll = () => {
 
       <ul className={`infinity flex  justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll`}>
         {DevTools.map((tool) => (
-          <li key={tool.id} className="mx-8 cursor-pointer">
+          <li key={tool.id} className="mx-8 cursor-pointer min-w-52 min-h-14 relative">
             <Image
-              className={`min-w-14 h-9 grayscale object-fill hover:grayscale-0`}
+              className={` grayscale object-fill hover:grayscale-0 `}
               src={tool.icon}
               alt={tool.name}
               title={tool.name}
+              layout="fill"
+              
             />
           </li>
         ))}

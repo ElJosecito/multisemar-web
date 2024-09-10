@@ -41,7 +41,7 @@ function Header() {
     return (
         <header className='w-full flex justify-center fixed z-[10000]  '>
             <div className={` w-full  px-0`}>
-                <nav className={`flex justify-between items-center w-full h-20 px-8 rounded-md backdrop-blur-lg transition-all duration-500  ${scroll ? 'bg-[#E6F6FE] ' : 'bg-transparent'}`}>
+                <nav className={`flex justify-between items-center w-full h-20 px-8 rounded-b-md backdrop-blur-lg transition-all duration-500  ${scroll ? 'bg-[#E6F6FE] ' : 'bg-transparent'}`}>
                     <div className='text-2xl font-bold'>
                         {/* <Image src={logo} alt="" /> */}
                         Logo
@@ -64,7 +64,7 @@ function Header() {
                     <motion.button
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className='bg-[#D9B36C] text-white px-8 py-4 text-sm rounded-xl font-semibold hidden lg:flex'>
+                        className='bg-primary text-white px-8 py-4 text-sm rounded-xl font-semibold hidden lg:flex'>
                         Book Now
                     </motion.button>
 
@@ -91,7 +91,7 @@ function Header() {
                         <motion.button
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
-                            className='bg-[#D9B36C] text-white px-8 py-4 text-sm rounded-xl font-semibold'>
+                            className='bg-primary text-white px-8 py-4 text-sm rounded-xl font-semibold'>
                             Book Now
                         </motion.button>
                     </ul>
