@@ -23,8 +23,8 @@ export default function Home() {
     <>
       <Header />
       <section className="flex flex-col items-center py-2 pt-20">
-        <div className="max-w-screen-2xl w-full flex flex-col px-3">
-          <div className="flex flex-col items-center lg:w-3/5 pt-32 text-center lg:text-start">
+        <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-3">
+          <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-32 text-center lg:text-start">
             {/*  */}
             <h1 className="lg:text-7xl text-5xl font-normal text-secondary">
               Empowering Excellence through Training and Consulting
