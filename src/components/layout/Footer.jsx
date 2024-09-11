@@ -18,7 +18,7 @@ function Footer() {
                         {/* <Image src={logo} alt="" /> */}
                         Logo
                     </div>
-                    <ul className='flex md:gap-8 gap-4 font-medium text-base'>
+                    <ul className='md:flex md:gap-8 gap-4 font-medium text-base hidden'>
                         <motion.li whileHover={{ scale: 1.3 }}>
                             <a href='/'>Home</a>
                         </motion.li>
