@@ -5,8 +5,6 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 
-import { Phone, UserRound, UsersRound, Building2 } from 'lucide-react';
-
 //images
 import hero from "@/public/images/principal.jpg";
 import hero2 from "@/public/images/principal2.jpg";
@@ -16,7 +14,7 @@ import claro from "@/public/images/claro.png";
 import InfinityScroll from "@/components/dynamicComponents/InfinityScroll";
 
 //icons 
-import { Droplets, Star, ThumbsUp, ShieldCheck } from 'lucide-react';
+import { Droplets, Star, ThumbsUp, ShieldCheck, Phone, UserRound, UsersRound, Building2, MapPinned, Mail } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -31,12 +29,12 @@ export default function Home() {
             </h1>
             {/*  */}
             <p className="lg:text-sm text-xs mt-8 text-[#00000056] md:pr-20 max-w-screen-sm px-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
               when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             </p>
             {/*  */}
-            <div className='flex flex-col items-start justify-center md:flex-row mt-7'>
+            <div className='flex flex-col md:flex-row items-start mt-7 gap-6 w-full'>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -45,7 +43,7 @@ export default function Home() {
               <div className='flex items-center md:ml-8'>
                 <div className='border-2 rounded-xl p-1 border-primary'>
                   <div className='bg-gradient-to-b from-[#1f67f642] to-transparent text-primary rounded-lg w-9 h-9 md:w-12 md:h-12 flex justify-center items-center'>
-                    {/* <FaPhoneVolume className='text-xl md:text-2xl' /> */}
+
                     <Phone className='text-xl md:text-2xl' />
                   </div>
                 </div>
@@ -101,7 +99,7 @@ export default function Home() {
       {/*  */}
       <section className="flex flex-col items-center">
         <div className="max-w-screen-2xl w-full">
-          <div className='my-20  flex justify-between overflow-hidden md:px-36 flex-wrap px-5'>
+          <div className='my-20 flex justify-center gap-4 md:justify-between overflow-hidden md:px-36 flex-wrap px-2'>
 
             <div className="grayscale hover:grayscale-0 cursor-pointer opacity-40 hover:opacity-100 mt-5">
               <Image src={claro} alt="Claro" width={177} />
@@ -167,7 +165,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="max-w-screen-2xl w-full mt-20 grid lg:grid-cols-3 grid-rows-1 gap-8 lg:absolute -bottom-16 px-4 pb-8">
+        <div className="max-w-screen-2xl w-full mt-20 grid lg:grid-cols-3 grid-rows-1 gap-8 lg:absolute -bottom-28 px-4 pb-8">
           <motion.div
             whileHover={{ scale: 1.06 }}
             className="bg-darkblue p-8 text-back_white text-center flex flex-col justify-center items-start rounded-lg">
@@ -205,15 +203,15 @@ export default function Home() {
           {/*  */}
           <div className="md:w-2/5 self-center ">
             <div className="color-primary rounded-lg flex flex-col items-center">
-              <div className="p-8 w-full flex flex-col justify-between md:px-14">
-                <div className="text-center">
-                  <h3 className="text-6xl font-extrabold text-darkblue">125+</h3>
-                  <p className="text-[#00000056] text-base mt-2">Countries Serve by Multisemar</p>
-                </div>
-                <div className=" text-center">
-                  <h3 className="text-6xl font-extrabold text-darkblue mt-2">20+</h3>
-                  <p className="text-[#00000056] text-base">Years at working field</p>
-                </div>
+
+              <div className="text-center">
+                <h3 className="text-6xl font-extrabold text-darkblue">125+</h3>
+                <p className="text-[#00000056] text-base mt-2">Countries Serve by Multisemar</p>
+              </div>
+              <div className=" text-center">
+                <h3 className="text-6xl font-extrabold text-darkblue mt-2">20+</h3>
+                <p className="text-[#00000056] text-base">Years at working field</p>
+
 
               </div>
               <div className="w-full flex justify-center">
@@ -229,7 +227,7 @@ export default function Home() {
 
       {/*  */}
 
-      <section className="flex flex-col items-center md:mt-20 mt-10">
+      <section className="flex flex-col items-center pt-10  pb-20 bg-[#F5F8FF]">
         <div className="max-w-screen-2xl w-full">
           <div className="w-full flex flex-col justify-between items-center mb-10">
             <h2 className="md:text-6xl text-5xl font-semibold text-secondary mt-20 text-center">Testimonials And Feedback</h2>
@@ -237,8 +235,8 @@ export default function Home() {
           </div>
 
           <div className="relative">
-            <div className='absolute left-0 w-32 h-full bg-gradient-to-r from-back_white to-transparent z-[1]'></div>
-            <div className='absolute right-0 w-32 h-full bg-gradient-to-l from-back_white to-transparent dark:from-raisin-black dark:to-transparent z-[1]' />
+            <div className='absolute left-0 w-32 h-full bg-gradient-to-r from-[#F5F8FF] to-transparent z-[1]'></div>
+            <div className='absolute right-0 w-32 h-full bg-gradient-to-l from-[#F5F8FF] to-transparent dark:from-raisin-black dark:to-transparent z-[1]' />
             <InfinityScroll animation={true} />
             <InfinityScroll animation={false} />
           </div>
@@ -247,7 +245,7 @@ export default function Home() {
 
       {/*  */}
 
-      <section className="flex flex-col items-center mt-20 bg-darkblue">
+      <section className="flex flex-col items-center bg-darkblue">
         <div className="max-w-screen-2xl w-full py-20 flex flex-col items-center">
           <h2 className="md:text-7xl text-5xl font-bold text-back_white text-center leading-normal">Ready to get our <br /> Services</h2>
           <p className="text-[#ffffff56] text-center mt-1 max-w-screen-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.</p>
@@ -256,6 +254,76 @@ export default function Home() {
             whileTap={{ scale: 0.9 }}
             className="bg-primary text-white rounded-xl p-4 px-8 font-semibold mt-8">Book an Appointment
           </motion.button>
+
+        </div>
+      </section>
+
+      {/*  */}
+      <section className="flex flex-col items-center my-20">
+        <div className="max-w-screen-2xl w-full flex flex-col items-start pl-4 md:pl-0">
+          <motion.h2
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="text-sm font-normal text-secondary mt-20 outline outline-secondary outline-1 px-4 py-[2px] rounded-full bg-[#ffffff33] cursor-pointer itemd-self-start">Services</motion.h2>
+          <h2 className="md:text-6xl text-5xl font-bold text-secondary text-center leading-normal self-start mt-10">Contact Form</h2>
+        </div>
+
+        <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row">
+          {/* Contact form */}
+          <div className="flex flex-col justify-between items-center mt-10 lg:w-1/2 lg:pr-10">
+            <form className="flex flex-col items-start w-full bg-[#0000000d] px-6 py-14 rounded-xl">
+              <div className="flex flex-col lg:flex-row w-full gap-4 ">
+                <div className="flex flex-col w-full">
+                  <label className="text-secondary text-lg font-semibold" htmlFor="name">Name</label>
+                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="text" id="name" name="name" />
+                </div>
+                <div className="flex flex-col w-full">
+                  <label className="text-secondary text-lg font-semibold " htmlFor="email">Email</label>
+                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="email" id="email" name="email" />
+                </div>
+              </div>
+              <div className="flex flex-col lg:flex-row w-full mt-5 gap-4">
+                <div className="flex flex-col w-full">
+                  <label className="text-secondary text-lg font-semibold" htmlFor="phone">Phone</label>
+                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="tel" id="phone" name="phone" />
+                </div>
+                <div className="flex flex-col w-full">
+                  <label className="text-secondary text-lg font-semibold" htmlFor="company">Company</label>
+                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="company" id="company" name="company" />
+                </div>
+              </div>
+              <div className="flex flex-col w-full mt-5">
+                <label className="text-secondary text-lg font-semibold" htmlFor="message">Message</label>
+                <textarea className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" id="message" name="message" rows="4"></textarea>
+              </div>
+              <button className="bg-primary text-white rounded-xl p-4 px-8 font-semibold mt-8 focus:outline-primary">Send Message</button>
+            </form>
+          </div>
+
+          {/* Contact info */}
+          <div className="flex flex-col justify-between items-start mt-10 lg:w-1/2 lg:px-10 px-5 gap-8">
+            <motion.div
+              whileHover={{ scale: 1.06 }}
+              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              <MapPinned className="size-10" />
+
+              <h3 className="text-[#00000056] mt-4 text-2xl font-normal">952 Bald Hill St,  Asheville NC 28803</h3>
+            </motion.div>
+            {/*  */}
+            <motion.div
+              whileHover={{ scale: 1.06 }}
+              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              <Phone className="size-10" />
+              <h3 className="text-[#00000056] mt-4 text-2xl font-normal"> +1 (809) -123-1234</h3>
+            </motion.div>
+            {/*  */}
+            <motion.div
+              whileHover={{ scale: 1.06 }}
+              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              <Mail className="size-10" />
+              <h3 className="text-[#00000056] mt-4 text-2xl font-normal">jondoe@example.com</h3>
+            </motion.div>
+          </div>
 
         </div>
       </section>
