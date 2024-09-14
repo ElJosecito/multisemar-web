@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section className="flex flex-col items-center py-2 pt-20">
+      <section className="flex flex-col items-center py-2 pt-20" >
         <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-3">
           <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-32 text-center lg:text-start">
             {/*  */}
@@ -119,8 +119,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/*  */}
-      <section className="flex flex-col items-center min-h-screen bg-primary mb-12 relative">
+      <section className="flex flex-col items-center min-h-screen bg-primary mb-12 relative" id="services">
         <motion.h2
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -189,7 +190,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center">
+      <section className="flex flex-col items-center" id="about">
         <div className="max-w-screen-2xl w-full flex flex-col md:flex-row text-center items-center md:text-start md:pb-32 md:pt-40">
           <div className="md:w-3/5 md:pl-16">
             <h2 className="lg:text-6xl md:text-5xl text-4xl font-medium text-secondary md:mt-20 leading-snug">Proving Excellente Through Training and Consulting</h2>
@@ -259,7 +260,7 @@ export default function Home() {
       </section>
 
       {/*  */}
-      <section className="flex flex-col items-center my-20">
+      <section className="flex flex-col items-center my-20" id="contact">
         <div className="max-w-screen-2xl w-full flex flex-col items-start pl-4 md:pl-0">
           <motion.h2
             whileHover={{ scale: 1.1 }}
@@ -304,7 +305,7 @@ export default function Home() {
           <div className="flex flex-col justify-between items-start mt-10 lg:w-1/2 lg:px-10 px-5 gap-8">
             <motion.div
               whileHover={{ scale: 1.06 }}
-              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
               <MapPinned className="size-10" />
 
               <h3 className="text-[#00000056] mt-4 text-2xl font-normal">952 Bald Hill St,  Asheville NC 28803</h3>
@@ -312,14 +313,14 @@ export default function Home() {
             {/*  */}
             <motion.div
               whileHover={{ scale: 1.06 }}
-              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
               <Phone className="size-10" />
               <h3 className="text-[#00000056] mt-4 text-2xl font-normal"> +1 (809) -123-1234</h3>
             </motion.div>
             {/*  */}
             <motion.div
               whileHover={{ scale: 1.06 }}
-              className="text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
+              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
               <Mail className="size-10" />
               <h3 className="text-[#00000056] mt-4 text-2xl font-normal">jondoe@example.com</h3>
             </motion.div>
