@@ -100,7 +100,7 @@ export default function Home() {
     <>
       <Header />
 {/* HERO SECTION - Enhanced */}
-<section className="flex flex-col items-center py-2 pt-20 bg-white">
+<section className="flex flex-col items-center py-2 bg-white">
   <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-6 lg:px-12">
     <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-20 lg:pt-32 text-center lg:text-start">
       {/* Main Title - Enhanced */}
