@@ -4,6 +4,27 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import {
+  // Icons for services
+  Users,
+  Target,
+  TrendingUp,
+  Award,
+  BookOpen,
+  Briefcase,
+  // Original icons
+  Star,
+  ThumbsUp,
+  ShieldCheck,
+  Phone,
+  UserRound,
+  UsersRound,
+  Building2,
+  MapPinned,
+  Mail,
+  ArrowRight,
+  Play
+} from 'lucide-react';
 
 //images
 import hero from "@/public/images/principal.jpg";
@@ -13,319 +34,677 @@ import claro from "@/public/images/claro.png";
 //components
 import InfinityScroll from "@/components/dynamicComponents/InfinityScroll";
 
-//icons 
-import { Droplets, Star, ThumbsUp, ShieldCheck, Phone, UserRound, UsersRound, Building2, MapPinned, Mail } from 'lucide-react';
+// Icon Renderer Component
+function IconRenderer({ iconName, className = "size-16", ...props }) {
+  const iconMap = {
+    Users,
+    Target,
+    TrendingUp,
+    Award,
+    BookOpen,
+    Briefcase,
+  };
+
+  const IconComponent = iconMap[iconName];
+  
+  if (!IconComponent) {
+    console.warn(`Icon "${iconName}" not found in iconMap`);
+    return <div className={className} />; // Fallback
+  }
+  
+  return <IconComponent className={className} {...props} />;
+}
+
+// Services Data
+const servicesData = [
+  {
+    id: 1,
+    icon: "Users",
+    title: "Team Leadership Training",
+    description: "Comprehensive leadership development programs designed to enhance team management skills and organizational effectiveness."
+  },
+  {
+    id: 2,
+    icon: "Target",
+    title: "Strategic Planning",
+    description: "Expert consulting services to help organizations define their vision, set clear objectives, and create actionable roadmaps."
+  },
+  {
+    id: 3,
+    icon: "TrendingUp",
+    title: "Performance Optimization",
+    description: "Data-driven approaches to improve business processes, increase productivity, and maximize operational efficiency."
+  },
+  {
+    id: 4,
+    icon: "Award",
+    title: "Quality Management",
+    description: "Implementation of quality control systems and best practices to ensure consistent excellence in service delivery."
+  },
+  {
+    id: 5,
+    icon: "BookOpen",
+    title: "Professional Development",
+    description: "Customized training programs to enhance skills, knowledge, and career advancement opportunities for your workforce."
+  },
+  {
+    id: 6,
+    icon: "Briefcase",
+    title: "Business Consulting",
+    description: "Comprehensive business analysis and strategic recommendations to drive growth and competitive advantage."
+  }
+];
 
 export default function Home() {
   return (
     <>
       <Header />
-      <section className="flex flex-col items-center py-2 pt-20" >
-        <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-3">
-          <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-32 text-center lg:text-start">
-            {/*  */}
-            <h1 className="lg:text-7xl text-5xl font-normal text-secondary">
-              Empowering Excellence through Training and Consulting
-            </h1>
-            {/*  */}
-            <p className="lg:text-sm text-xs mt-8 text-[#00000056] md:pr-20 max-w-screen-sm px-3">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </p>
-            {/*  */}
-            <div className='flex flex-col md:flex-row items-start mt-7 gap-6 w-full'>
-              <motion.button
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                className='bg-primary text-white rounded-xl p-4 font-semibold '>Book an Appointment
-              </motion.button>
-              <div className='flex items-center md:ml-8'>
-                <div className='border-2 rounded-xl p-1 border-primary'>
-                  <div className='bg-gradient-to-b from-[#1f67f642] to-transparent text-primary rounded-lg w-9 h-9 md:w-12 md:h-12 flex justify-center items-center'>
-
-                    <Phone className='text-xl md:text-2xl' />
-                  </div>
-                </div>
-                <div className='ml-2 md:ml-4 w-full'>
-                  <p className='text-secondary font-semibold text-sm'>Llamanos Ahora</p>
-                  <p className='text-primary font-bold text-sm'>+1 123 456 7890</p>
-                </div>
-              </div>
+{/* HERO SECTION - Enhanced */}
+<section className="flex flex-col items-center py-2 pt-20 bg-white">
+  <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-6 lg:px-12">
+    <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-20 lg:pt-32 text-center lg:text-start">
+      {/* Main Title - Enhanced */}
+      <motion.h1 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="lg:text-6xl md:text-5xl text-4xl font-bold text-secondary leading-[1.1] tracking-tight"
+      >
+        Empowering Excellence through 
+        <span className="text-primary mt-2 block"> Training & Consulting</span>
+      </motion.h1>
+      
+      {/* Description - Enhanced */}
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="text-base mt-6 lg:mt-8 text-gray-600 lg:pr-20 max-w-2xl leading-relaxed"
+      >
+        Transform your business with our expert training programs and strategic consulting services. 
+        We help organizations unlock their full potential through proven methodologies and innovative approaches.
+      </motion.p>
+      
+      {/* CTA Buttons - Enhanced */}
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className='flex flex-col md:flex-row items-center justify-center lg:justify-start mt-8 lg:mt-10 gap-6 w-full'
+      >
+        <motion.button
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.95 }}
+          className='bg-primary text-white rounded-2xl px-6 py-3 md:px-8 md:py-4 font-bold text-base md:text-lg border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2'
+        >
+          Book an Appointment
+          <ArrowRight className="size-4 md:size-5" />
+        </motion.button>
+        
+        <div className='flex items-center md:ml-4 lg:ml-8'>
+          <motion.div 
+            whileHover={{ scale: 1.1 }}
+            className='border-2 rounded-2xl p-2 border-primary hover:bg-primary/5 transition-colors duration-300'
+          >
+            <div className='bg-primary/10 text-primary rounded-xl w-10 h-10 md:w-12 md:h-12 flex justify-center items-center'>
+              <Phone className='text-xl md:text-2xl' />
             </div>
-            {/*  */}
-            <motion.div
-              whileHover={{ scale: 1.01 }}
-              whileTap={{ scale: 0.9 }}
-              className="outline outline-1 outline-primary rounded-xl p-4 md:px-10 font-semibold mt-16 h-20 md:flex justify-between items-center max-w-screen-sm hidden w-fit">
-              {/*  */}
-              <div className="flex items-end text-[#00000056] mx-3">
-                <UserRound className="" />
-                <p className='ml-2 self-end leading-none '>Personas</p>
-              </div>
-              {/*  */}
-              <div className="flex items-end text-[#00000056] mx-3">
-                <UsersRound />
-                <p className='ml-2 self-end leading-none '>Empresas</p>
-              </div>
-              {/*  */}
-              <div className="flex items-end text-[#00000056] mx-3">
-                <Building2 />
-                <p className='ml-2 self-end leading-none '>Compañias</p>
-              </div>
+          </motion.div>
+          <div className='ml-3 md:ml-4'>
+            <p className='text-secondary font-bold text-xs md:text-sm uppercase tracking-wide'>Call Us Now</p>
+            <p className='text-primary font-bold text-base md:text-lg'>+1 123 456 7890</p>
+          </div>
+        </div>
+      </motion.div>
+      
+      {/* Categories - Enhanced */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        whileHover={{ y: -3 }}
+        className="border-2 border-primary rounded-2xl p-4 md:p-6 font-semibold mt-12 lg:mt-16 md:flex justify-between items-center max-w-2xl hidden w-full hover:bg-primary/5 transition-all duration-300"
+      >
+        <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
+          <UserRound className="size-5 md:size-6" />
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Individuals</p>
+        </div>
+        <div className="w-px h-6 md:h-8 bg-primary/20"></div>
+        <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
+          <UsersRound className="size-5 md:size-6" />
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Teams</p>
+        </div>
+        <div className="w-px h-6 md:h-8 bg-primary/20"></div>
+        <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
+          <Building2 className="size-5 md:size-6" />
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Enterprises</p>
+        </div>
+      </motion.div>
+    </div>
+
+    {/* Hero Images - Enhanced */}
+    <motion.div 
+      initial={{ opacity: 0, x: 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="lg:w-2/5 lg:pt-32 pt-12 lg:pt-16"
+    >
+      <div className="relative">
+        <Image
+          src={hero}
+          alt="Professional Training"
+          className="object-cover w-full h-auto rounded-3xl border-4 border-white"
+          layout="responsive"
+          placeholder="blur"
+        />
+        {/* Se eliminó el icono de play */}
+      </div>
+
+      {/* Segunda imagen con tamaño original */}
+      <Image
+        src={hero2}
+        alt="Business Consulting"
+        className="object-cover max-h-[200px] rounded-3xl mt-8 border-4 border-white"
+        layout="responsive"
+        placeholder="blur"
+      />
+    </motion.div>
+  </div>
+</section>
+
+{/* COMPANIES SECTION - Enhanced */}
+<section className="flex flex-col items-center py-20 bg-gray-50">
+  <div className="max-w-screen-2xl w-full px-4">
+    <motion.h3 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      className="text-center text-secondary font-bold text-xl mb-12 uppercase tracking-wide"
+    >
+      Trusted by Industry Leaders
+    </motion.h3>
+    
+    {/* Container with horizontal scroll for mobile */}
+    <div className="relative">
+      {/* Scrollable container - hidden on desktop */}
+      <div className="flex overflow-x-auto pb-6 hide-scrollbar md:hidden">
+        <div className="flex gap-8 min-w-max px-4">
+          {[1, 2, 3, 4].map((item, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ scale: 1.05 }}
+              className="flex-shrink-0 grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
+            >
+              <Image src={claro} alt="Claro" width={120} />
             </motion.div>
-          </div>
-
-          <div className="lg:w-2/5 lg:pt-32 pt-16">
-            <Image
-              src={hero}
-              alt="Hero"
-              className="object-cover max-h-[350px] rounded-lg"
-              layout="responsive"
-              placeholder="blur"
-            />
-
-            <Image
-              src={hero2}
-              alt="Hero"
-              className="object-cover max-h-[177px] rounded-lg mt-5"
-              layout="responsive"
-              placeholder="blur"
-            />
-          </div>
+          ))}
         </div>
-      </section>
-
-      {/*  */}
-      <section className="flex flex-col items-center">
-        <div className="max-w-screen-2xl w-full">
-          <div className='my-20 flex justify-center gap-4 md:justify-between overflow-hidden md:px-36 flex-wrap px-2'>
-
-            <div className="grayscale hover:grayscale-0 cursor-pointer opacity-40 hover:opacity-100 mt-5">
-              <Image src={claro} alt="Claro" width={177} />
-            </div>
-            {/*  */}
-            <div className=" grayscale hover:grayscale-0 cursor-pointer opacity-40 hover:opacity-100 mt-5">
-              <Image src={claro} alt="Claro" width={177} />
-            </div>
-            {/*  */}
-            <div className="grayscale hover:grayscale-0 cursor-pointer opacity-40 hover:opacity-100 mt-5">
-              <Image src={claro} alt="Claro" width={177} />
-            </div>
-            {/*  */}
-            <div className="grayscale hover:grayscale-0 cursor-pointer opacity-40 hover:opacity-100 mt-5">
-              <Image src={claro} alt="Claro" width={177} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/*  */}
-      <section className="flex flex-col items-center min-h-screen bg-primary mb-12 relative" id="services">
-        <motion.h2
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="text-sm font-normal text-white mt-20 outline outline-back_white outline-1 px-4 py-[2px] rounded-full bg-[#ffffff33] cursor-pointer">Services</motion.h2>
-        <h2 className="md:text-5xl text-3xl font-medium text-white mt-5 text-center">Explore our comprehensive range of professional services</h2>
-
-        <div className="max-w-screen-2xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 mt-16">
-          <div className=" p-8 text-back_white text-center flex flex-col justify-center items-center">
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-          {/*  */}
-          <div className="  p-8 text-back_white text-center flex flex-col justify-center items-center">
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-          {/*  */}
-          <div className=" p-8 text-back_white text-center flex flex-col justify-center items-center">
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-          {/*  */}
-          <div className=" p-8 text-back_white text-center flex flex-col justify-center items-center">
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-          {/*  */}
-          <div className=" p-8 text-back_white text-center flex flex-col justify-center items-center" >
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-          {/*  */}
-          <div className="   p-8 text-back_white text-center flex flex-col justify-center items-center">
-            <Droplets className="size-16" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Plumbing</h3>
-            <p className="text-back_white mt-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry, dummy text of the printing.</p>
-          </div>
-        </div>
-
-        <div className="max-w-screen-2xl w-full mt-20 grid lg:grid-cols-3 grid-rows-1 gap-8 lg:absolute -bottom-28 px-4 pb-8">
-          <motion.div
-            whileHover={{ scale: 1.06 }}
-            className="bg-darkblue p-8 text-back_white text-center flex flex-col justify-center items-start rounded-lg">
-            <Star className="size-10" />
-            <h3 className="text-white mt-4 text-2xl font-semibold tracking-[2%]">Affordable Rates</h3>
+      </div>
+      
+      {/* Desktop layout - centered without scroll */}
+      <div className="hidden md:flex justify-center gap-8 px-6">
+        {[1, 2, 3, 4].map((item, index) => (
+          <motion.div 
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+            className="grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
+          >
+            <Image src={claro} alt="Claro" width={150} />
           </motion.div>
-          {/*  */}
-          <motion.div
-            whileHover={{ scale: 1.06 }}
-            className="bg-darkblue p-8 text-back_white text-center flex flex-col justify-center items-start rounded-lg">
-            <ThumbsUp className="size-10" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Reliable Services</h3>
-          </motion.div>
-          {/*  */}
-          <motion.div
-            whileHover={{ scale: 1.06 }}
-            className="bg-darkblue p-8 text-back_white text-center flex flex-col justify-center items-start rounded-lg">
-            <ShieldCheck className="size-10" />
-            <h3 className="text-white mt-4 text-2xl font-semibold">Professional Expertise</h3>
-          </motion.div>
-        </div>
-      </section>
+        ))}
+      </div>
+      
+      {/* Gradient fade effects for mobile */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-gray-50 to-transparent md:hidden"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-50 to-transparent md:hidden"></div>
+    </div>
+    
+    {/* Mobile indicator */}
+    <motion.p 
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ delay: 0.5 }}
+      className="text-center text-gray-500 mt-4 text-sm md:hidden"
+    >
+      Desliza para ver más ›
+    </motion.p>
+  </div>
 
-      <section className="flex flex-col items-center" id="about">
-        <div className="max-w-screen-2xl w-full flex flex-col md:flex-row text-center items-center md:text-start md:pb-32 md:pt-40">
-          <div className="md:w-3/5 md:pl-16">
-            <h2 className="lg:text-6xl md:text-5xl text-4xl font-medium text-secondary md:mt-20 leading-snug">Proving Excellente Through Training and Consulting</h2>
-            {/*  */}
-            <p className="text-xs md:text-sm px-3 mt-8 text-[#00000056] md:pr-20 max-w-screen-sm ">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industrys standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  <style jsx>{`
+    .hide-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;  /* Chrome, Safari and Opera */
+    }
+  `}</style>
+</section>
+
+{/* SERVICES SECTION - Enhanced */}
+<section className="flex flex-col items-center min-h-screen bg-primary relative overflow-visible pb-32" id="services">
+  {/* Background Pattern */}
+  <div className="absolute inset-0 opacity-10">
+    <div className="absolute top-20 left-20 w-32 h-32 border border-white rounded-full"></div>
+    <div className="absolute top-40 right-32 w-24 h-24 border border-white rounded-full"></div>
+    <div className="absolute bottom-32 left-1/3 w-28 h-28 border border-white rounded-full"></div>
+  </div>
+  
+  <div className="relative z-10 w-full max-w-screen-2xl px-6">
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="text-center mt-20 mb-16"
+    >
+      <motion.h2
+        whileHover={{ scale: 1.05 }}
+        className="inline-block text-sm font-bold text-white border-2 border-white px-8 py-4 rounded-full bg-white/10 cursor-pointer uppercase tracking-wide"
+      >
+        Our Services
+      </motion.h2>
+      <h2 className="md:text-6xl text-4xl font-bold text-white mt-8 leading-tight max-w-4xl mx-auto">
+        Comprehensive Solutions for 
+        <span className="block">Professional Growth</span>
+      </h2>
+    </motion.div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-12">
+      {servicesData.map((service, index) => (
+        <motion.div 
+          key={service.id}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          whileHover={{ y: -10, scale: 1.02 }}
+          className="bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-3xl p-8 text-center hover:bg-white/20 hover:border-white/40 transition-all duration-300 group"
+        >
+          <div className="bg-white/20 rounded-2xl p-4 w-fit mx-auto mb-6 group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
+            <IconRenderer iconName={service.icon} className="size-12 text-white" />
+          </div>
+          <h3 className="text-white text-2xl font-bold mb-4 group-hover:text-white/90">{service.title}</h3>
+          <p className="text-white/80 leading-relaxed group-hover:text-white/70">{service.description}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+  
+  {/* Bottom Cards - Visible only on desktop */}
+  <div className="hidden lg:grid lg:grid-cols-3 gap-8 max-w-screen-2xl w-full absolute -bottom-28 left-1/2 transform -translate-x-1/2 px-6 z-20">
+    {[
+      { icon: Star, title: "Affordable Rates", desc: "Competitive pricing for all budgets" },
+      { icon: ThumbsUp, title: "Reliable Services", desc: "Consistent quality you can trust" },
+      { icon: ShieldCheck, title: "Professional Expertise", desc: "Industry-leading specialists" }
+    ].map((item, index) => (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1 }}
+        whileHover={{ y: -8, scale: 1.03 }}
+        className="bg-darkblue border-2 border-darkblue hover:border-white/20 rounded-3xl p-8 text-white hover:bg-darkblue/90 transition-all duration-300 group shadow-xl"
+      >
+        <item.icon className="size-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
+        <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
+        <p className="text-white/80 group-hover:text-white/70">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+{/* Additional Cards Section - Visible only on mobile and tablet */}
+<section className="lg:hidden bg-darkblue py-16">
+  <div className="max-w-screen-xl mx-auto px-6">
+    <h2 className="text-3xl font-bold text-white text-center mb-12">Why Choose Us</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        { icon: Star, title: "Affordable Rates", desc: "Competitive pricing for all budgets" },
+        { icon: ThumbsUp, title: "Reliable Services", desc: "Consistent quality you can trust" },
+        { icon: ShieldCheck, title: "Professional Expertise", desc: "Industry-leading specialists" }
+      ].map((item, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: index * 0.1 }}
+          whileHover={{ y: -5, scale: 1.02 }}
+          className="bg-primary border-2 border-primary hover:border-white/20 rounded-3xl p-8 text-white text-center hover:bg-primary/90 transition-all duration-300 group shadow-lg"
+        >
+          <item.icon className="size-12 mb-4 mx-auto group-hover:scale-110 transition-transform duration-300" />
+          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+          <p className="text-white/80 group-hover:text-white/70">{item.desc}</p>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
+
+      {/* ABOUT SECTION - Enhanced */}
+      <section className="flex flex-col items-center bg-white py-20 lg:pt-40" id="about">
+        <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row text-center items-center lg:text-start px-6 lg:px-12 gap-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:w-3/5"
+          >
+            <h2 className="lg:text-7xl md:text-5xl text-4xl font-bold text-secondary leading-tight mb-8">
+              Proving Excellence Through
+              <span className="text-primary block">Training & Consulting</span>
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+              With over two decades of experience, we&apos;ve helped thousands of organizations
+              transform their potential into measurable success. Our proven methodologies 
+              and expert guidance ensure sustainable growth and lasting impact.
             </p>
-          </div>
-          {/*  */}
-          <div className="md:w-2/5 self-center ">
-            <div className="color-primary rounded-lg flex flex-col items-center">
-
-              <div className="text-center">
-                <h3 className="text-6xl font-extrabold text-darkblue">125+</h3>
-                <p className="text-[#00000056] text-base mt-2">Countries Serve by Multisemar</p>
-              </div>
-              <div className=" text-center">
-                <h3 className="text-6xl font-extrabold text-darkblue mt-2">20+</h3>
-                <p className="text-[#00000056] text-base">Years at working field</p>
-
-
-              </div>
-              <div className="w-full flex justify-center">
-                <div className="text-center">
-                  <h3 className="text-6xl font-extrabold text-darkblue mt-2">15k+</h3>
-                  <p className="text-[#00000056] text-base">client Engagement per Year</p>
-                </div>
-              </div>
+            
+            <motion.button
+              whileHover={{ scale: 1.05, y: -2 }}
+              className="mt-8 bg-primary text-white px-8 py-4 rounded-2xl font-bold border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2"
+            >
+              Learn More About Us
+              <ArrowRight className="size-5" />
+            </motion.button>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:w-2/5"
+          >
+            <div className="grid grid-cols-1 gap-8">
+              {[
+                { number: "125+", label: "Countries Served Worldwide", color: "text-primary" },
+                { number: "20+", label: "Years of Industry Experience", color: "text-secondary" },
+                { number: "15k+", label: "Client Engagements per Year", color: "text-primary" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center border-2 border-gray-200 rounded-3xl p-8 hover:border-primary/30 hover:bg-gray-50 transition-all duration-300"
+                >
+                  <h3 className={`text-6xl font-black ${stat.color} mb-2`}>{stat.number}</h3>
+                  <p className="text-gray-600 text-lg font-semibold">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/*  */}
-
-      <section className="flex flex-col items-center pt-10  pb-20 bg-[#F5F8FF]">
-        <div className="max-w-screen-2xl w-full">
-          <div className="w-full flex flex-col justify-between items-center mb-10">
-            <h2 className="md:text-6xl text-5xl font-semibold text-secondary mt-20 text-center">Testimonials And Feedback</h2>
-            <p className="text-[#00000056] text-center mt-4 max-w-screen-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.</p>
-          </div>
+      {/* TESTIMONIALS SECTION - Enhanced */}
+      <section className="flex flex-col items-center pt-20 pb-32 bg-[#F5F8FF]">
+        <div className="max-w-screen-2xl w-full px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h2 className="md:text-6xl text-4xl font-bold text-secondary mb-6">
+              What Our <span className="text-primary">Clients Say</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              Don&apos;t just take our word for it. Here&apos;s what industry leaders and satisfied clients 
+              have to say about their experience working with us.
+            </p>
+          </motion.div>
 
           <div className="relative">
             <div className='absolute left-0 w-32 h-full bg-gradient-to-r from-[#F5F8FF] to-transparent z-[1]'></div>
-            <div className='absolute right-0 w-32 h-full bg-gradient-to-l from-[#F5F8FF] to-transparent dark:from-raisin-black dark:to-transparent z-[1]' />
+            <div className='absolute right-0 w-32 h-full bg-gradient-to-l from-[#F5F8FF] to-transparent z-[1]' />
             <InfinityScroll animation={true} />
             <InfinityScroll animation={false} />
           </div>
         </div>
       </section>
 
-      {/*  */}
-
-      <section className="flex flex-col items-center bg-darkblue">
-        <div className="max-w-screen-2xl w-full py-20 flex flex-col items-center">
-          <h2 className="md:text-7xl text-5xl font-bold text-back_white text-center leading-normal">Ready to get our <br /> Services</h2>
-          <p className="text-[#ffffff56] text-center mt-1 max-w-screen-sm">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.</p>
+      {/* CTA SECTION - Enhanced */}
+      <section className="flex flex-col items-center bg-secondary py-32 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-40 h-40 border-2 border-white rounded-full"></div>
+          <div className="absolute bottom-20 left-20 w-32 h-32 border-2 border-white rounded-full"></div>
+        </div>
+        
+        <div className="max-w-screen-2xl w-full text-center relative z-10 px-6">
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="md:text-7xl text-5xl font-black text-white leading-tight mb-6"
+          >
+            Ready to Transform 
+            <span className="text-primary block">Your Business?</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-white/80 text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
+          >
+            Take the first step towards excellence. Let&apos;s discuss how our proven strategies 
+            can accelerate your growth and achieve your business objectives.
+          </motion.p>
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-primary text-white rounded-xl p-4 px-8 font-semibold mt-8">Book an Appointment
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            whileHover={{ scale: 1.05, y: -3 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary text-white rounded-2xl py-5 px-10 font-black text-xl border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300 flex items-center gap-3 mx-auto"
+          >
+            Start Your Transformation
+            <ArrowRight className="size-6" />
           </motion.button>
-
         </div>
       </section>
 
-      {/*  */}
-      <section className="flex flex-col items-center my-20" id="contact">
-        <div className="max-w-screen-2xl w-full flex flex-col items-start pl-4 md:pl-0">
-          <motion.h2
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="text-sm font-normal text-secondary mt-20 outline outline-secondary outline-1 px-4 py-[2px] rounded-full bg-[#ffffff33] cursor-pointer itemd-self-start">Services</motion.h2>
-          <h2 className="md:text-6xl text-5xl font-bold text-secondary text-center leading-normal self-start mt-10">Contact Form</h2>
-        </div>
+      {/* CONTACT SECTION - Enhanced */}
+      <section className="flex flex-col items-center bg-[#F5F8FF] py-32" id="contact">
+        <div className="max-w-screen-2xl w-full px-6">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-20"
+          >
+            <motion.h2
+              whileHover={{ scale: 1.05 }}
+              className="inline-block text-sm font-bold text-secondary border-2 border-secondary px-8 py-4 rounded-full bg-white cursor-pointer uppercase tracking-wide mb-8"
+            >
+              Get In Touch
+            </motion.h2>
+            <h2 className="md:text-6xl text-4xl font-bold text-secondary leading-tight mb-6">
+              Let&apos;s Start a <span className="text-primary">Conversation</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+              Ready to transform your business? Get in touch and let&apos;s discuss how we can help you achieve excellence through our proven training and consulting services.
+            </p>
+          </motion.div>
 
-        <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row">
-          {/* Contact form */}
-          <div className="flex flex-col justify-between items-center mt-10 lg:w-1/2 lg:pr-10">
-            <form className="flex flex-col items-start w-full bg-[#0000000d] px-6 py-14 rounded-xl">
-              <div className="flex flex-col lg:flex-row w-full gap-4 ">
-                <div className="flex flex-col w-full">
-                  <label className="text-secondary text-lg font-semibold" htmlFor="name">Name</label>
-                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="text" id="name" name="name" />
-                </div>
-                <div className="flex flex-col w-full">
-                  <label className="text-secondary text-lg font-semibold " htmlFor="email">Email</label>
-                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="email" id="email" name="email" />
-                </div>
+          <div className="flex flex-col xl:flex-row gap-16 items-start">
+            {/* Contact Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              className="xl:w-3/5 w-full"
+            >
+              <div className="bg-white border-2 border-gray-200 rounded-3xl p-10 lg:p-16 hover:border-primary/30 transition-colors duration-300">
+                <form className="space-y-8">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <motion.div 
+                      whileHover={{ y: -2 }}
+                      className="space-y-3"
+                    >
+                      <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="name">
+                        Full Name *
+                      </label>
+                      <input 
+                        className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        placeholder="Enter your full name"
+                      />
+                    </motion.div>
+                    
+                    <motion.div 
+                      whileHover={{ y: -2 }}
+                      className="space-y-3"
+                    >
+                      <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="email">
+                        Email Address *
+                      </label>
+                      <input 
+                        className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="your.email@company.com"
+                      />
+                    </motion.div>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <motion.div 
+                      whileHover={{ y: -2 }}
+                      className="space-y-3"
+                    >
+                      <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="phone">
+                        Phone Number
+                      </label>
+                      <input 
+                        className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
+                        type="tel" 
+                        id="phone" 
+                        name="phone"
+                        placeholder="+1 (555) 123-4567"
+                      />
+                    </motion.div>
+                    
+                    <motion.div 
+                      whileHover={{ y: -2 }}
+                      className="space-y-3"
+                    >
+                      <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="company">
+                        Company Name
+                      </label>
+                      <input 
+                        className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
+                        type="text" 
+                        id="company" 
+                        name="company"
+                        placeholder="Your Company Ltd."
+                      />
+                    </motion.div>
+                  </div>
+                  
+                  <motion.div 
+                    whileHover={{ y: -2 }}
+                    className="space-y-3"
+                  >
+                    <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="message">
+                      Your Message *
+                    </label>
+                    <textarea 
+                      className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500 min-h-[150px] resize-none" 
+                      id="message" 
+                      name="message" 
+                      rows="6"
+                      placeholder="Tell us about your project and how we can help you achieve your goals..."
+                    ></textarea>
+                  </motion.div>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.02, y: -2 }}
+                    whileTap={{ scale: 0.98 }}
+                    type="submit"
+                    className="w-full bg-primary text-white rounded-2xl py-5 px-8 font-black text-xl border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center justify-center gap-3"
+                  >
+                    Send Message
+                    <ArrowRight className="size-6" />
+                  </motion.button>
+                </form>
               </div>
-              <div className="flex flex-col lg:flex-row w-full mt-5 gap-4">
-                <div className="flex flex-col w-full">
-                  <label className="text-secondary text-lg font-semibold" htmlFor="phone">Phone</label>
-                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="tel" id="phone" name="phone" />
+            </motion.div>
+
+            {/* Contact Info */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="xl:w-2/5 w-full space-y-8"
+            >
+              {[
+                {
+                  icon: MapPinned,
+                  title: "Visit Our Office",
+                  content: "952 Bald Hill Street\nAsheville, NC 28803\nUnited States",
+                  extra: "Open Mon - Fri: 9:00 AM - 6:00 PM"
+                },
+                {
+                  icon: Phone,
+                  title: "Call Us Now",
+                  content: "+1 (809) 123-1234",
+                  extra: "Available 24/7 for urgent inquiries"
+                },
+                {
+                  icon: Mail,
+                  title: "Email Us",
+                  content: "hello@multisemar.com",
+                  extra: "We reply within 24 hours"
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-primary/30 transition-all duration-300 group"
+                >
+                  <div className="flex items-start space-x-6">
+                    <div className="bg-primary/10 border-2 border-primary/20 p-4 rounded-2xl group-hover:bg-primary group-hover:border-primary transition-all duration-300">
+                      <item.icon className="size-8 text-primary group-hover:text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-secondary text-xl font-bold mb-3">{item.title}</h3>
+                      <p className="text-gray-700 text-lg leading-relaxed whitespace-pre-line mb-2">
+                        {item.content}
+                      </p>
+                      <p className="text-sm text-gray-500 font-medium">{item.extra}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* CTA Card */}
+              {/* <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                whileHover={{ y: -5, scale: 1.02 }}
+                className="bg-primary/5 border-2 border-primary rounded-3xl p-8 hover:bg-primary/10 transition-all duration-300"
+              >
+                <div className="text-center">
+                  <h3 className="text-secondary text-2xl font-bold mb-4">Need Immediate Assistance?</h3>
+                  <p className="text-gray-600 mb-6 text-lg">Schedule a free 30-minute consultation call with our experts</p>
+                  <motion.button
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-primary text-white px-8 py-4 rounded-2xl font-bold border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2 mx-auto"
+                  >
+                    Book a Free Call
+                    <Phone className="size-5" />
+                  </motion.button>
                 </div>
-                <div className="flex flex-col w-full">
-                  <label className="text-secondary text-lg font-semibold" htmlFor="company">Company</label>
-                  <input className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" type="company" id="company" name="company" />
-                </div>
-              </div>
-              <div className="flex flex-col w-full mt-5">
-                <label className="text-secondary text-lg font-semibold" htmlFor="message">Message</label>
-                <textarea className="w-full bg-back_white rounded-lg p-4 mt-2 transition duration-300 ease focus:outline-none focus:ring-1 focus:border-primary hover:border-primary shadow-sm focus:shadow" id="message" name="message" rows="4"></textarea>
-              </div>
-              <button className="bg-primary text-white rounded-xl p-4 px-8 font-semibold mt-8 focus:outline-primary">Send Message</button>
-            </form>
+              </motion.div> */}
+            </motion.div>
           </div>
-
-          {/* Contact info */}
-          <div className="flex flex-col justify-between items-start mt-10 lg:w-1/2 lg:px-10 px-5 gap-8">
-            <motion.div
-              whileHover={{ scale: 1.06 }}
-              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
-              <MapPinned className="size-10" />
-
-              <h3 className="text-[#00000056] mt-4 text-2xl font-normal">952 Bald Hill St,  Asheville NC 28803</h3>
-            </motion.div>
-            {/*  */}
-            <motion.div
-              whileHover={{ scale: 1.06 }}
-              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
-              <Phone className="size-10" />
-              <h3 className="text-[#00000056] mt-4 text-2xl font-normal"> +1 (809) -123-1234</h3>
-            </motion.div>
-            {/*  */}
-            <motion.div
-              whileHover={{ scale: 1.06 }}
-              className="cursor-pointer text-primary text-center flex flex-col justify-center items-start outline outline-1 outline-primary rounded-xl p-8 w-full">
-              <Mail className="size-10" />
-              <h3 className="text-[#00000056] mt-4 text-2xl font-normal">jondoe@example.com</h3>
-            </motion.div>
-          </div>
-
         </div>
       </section>
 
