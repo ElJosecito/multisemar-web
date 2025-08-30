@@ -101,7 +101,7 @@ const servicesData = [
   },
   {
     id: 6,
-    icon: "Tool",
+    icon: "Wrench",
     title: "Mantenimiento General",
     description: "Servicios de mantenimiento preventivo y correctivo para todo tipo de equipos e instalaciones."
   }
