@@ -23,7 +23,13 @@ import {
   MapPinned,
   Mail,
   ArrowRight,
-  Play
+  Play,
+  Wrench,
+  Truck,
+  Cog,
+  Zap,
+  HardHat,
+  Tool
 } from 'lucide-react';
 
 //images
@@ -43,6 +49,12 @@ function IconRenderer({ iconName, className = "size-16", ...props }) {
     Award,
     BookOpen,
     Briefcase,
+    Wrench,
+    Truck,
+    Cog,
+    Zap,
+    HardHat,
+    Tool
   };
 
   const IconComponent = iconMap[iconName];
@@ -59,39 +71,39 @@ function IconRenderer({ iconName, className = "size-16", ...props }) {
 const servicesData = [
   {
     id: 1,
-    icon: "Users",
-    title: "Team Leadership Training",
-    description: "Comprehensive leadership development programs designed to enhance team management skills and organizational effectiveness."
+    icon: "Truck",
+    title: "Servicios de Grúas",
+    description: "Servicios profesionales de grúas las 24 horas para transporte pesado, rescate vehicular y apoyo en obras de construcción."
   },
   {
     id: 2,
-    icon: "Target",
-    title: "Strategic Planning",
-    description: "Expert consulting services to help organizations define their vision, set clear objectives, and create actionable roadmaps."
+    icon: "Wrench",
+    title: "Mantenimiento Electromecánico",
+    description: "Soluciones integrales en electromecánica para vehículos, maquinaria industrial y equipos especializados."
   },
   {
     id: 3,
-    icon: "TrendingUp",
-    title: "Performance Optimization",
-    description: "Data-driven approaches to improve business processes, increase productivity, and maximize operational efficiency."
+    icon: "Zap",
+    title: "Instalaciones Eléctricas",
+    description: "Diseño, instalación y mantenimiento de sistemas eléctricos residenciales, comerciales e industriales."
   },
   {
     id: 4,
-    icon: "Award",
-    title: "Quality Management",
-    description: "Implementation of quality control systems and best practices to ensure consistent excellence in service delivery."
+    icon: "Cog",
+    title: "Ingeniería y Consultoría",
+    description: "Asesoría técnica especializada, planificación de proyectos y soluciones de ingeniería personalizadas."
   },
   {
     id: 5,
-    icon: "BookOpen",
-    title: "Professional Development",
-    description: "Customized training programs to enhance skills, knowledge, and career advancement opportunities for your workforce."
+    icon: "HardHat",
+    title: "Servicios de Construcción",
+    description: "Ejecución de obras civiles, remodelaciones y construcciones con los más altos estándares de calidad."
   },
   {
     id: 6,
-    icon: "Briefcase",
-    title: "Business Consulting",
-    description: "Comprehensive business analysis and strategic recommendations to drive growth and competitive advantage."
+    icon: "Tool",
+    title: "Mantenimiento General",
+    description: "Servicios de mantenimiento preventivo y correctivo para todo tipo de equipos e instalaciones."
   }
 ];
 
@@ -110,8 +122,8 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="lg:text-6xl md:text-5xl text-4xl font-bold text-secondary leading-[1.1] tracking-tight"
       >
-        Empowering Excellence through 
-        <span className="text-primary mt-2 block"> Training & Consulting</span>
+        Multisemar: Soluciones Integrales en 
+        <span className="text-primary mt-2 "> Multiservicios</span>
       </motion.h1>
       
       {/* Description - Enhanced */}
@@ -121,8 +133,8 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-base mt-6 lg:mt-8 text-gray-600 lg:pr-20 max-w-2xl leading-relaxed"
       >
-        Transform your business with our expert training programs and strategic consulting services. 
-        We help organizations unlock their full potential through proven methodologies and innovative approaches.
+        Más de 20 años brindando servicios especializados en grúas, electromecánica, 
+        instalaciones eléctricas y construcción. Confiabilidad y excelencia en cada proyecto.
       </motion.p>
       
       {/* CTA Buttons - Enhanced */}
@@ -137,7 +149,7 @@ export default function Home() {
           whileTap={{ scale: 0.95 }}
           className='bg-primary text-white rounded-2xl px-6 py-3 md:px-8 md:py-4 font-bold text-base md:text-lg border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2'
         >
-          Book an Appointment
+          Solicitar Cotización
           <ArrowRight className="size-4 md:size-5" />
         </motion.button>
         
@@ -151,8 +163,8 @@ export default function Home() {
             </div>
           </motion.div>
           <div className='ml-3 md:ml-4'>
-            <p className='text-secondary font-bold text-xs md:text-sm uppercase tracking-wide'>Call Us Now</p>
-            <p className='text-primary font-bold text-base md:text-lg'>+1 123 456 7890</p>
+            <p className='text-secondary font-bold text-xs md:text-sm uppercase tracking-wide'>Llámenos Ahora</p>
+            <p className='text-primary font-bold text-base md:text-lg'>+1 (809) 556-7890</p>
           </div>
         </div>
       </motion.div>
@@ -167,17 +179,17 @@ export default function Home() {
       >
         <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
           <UserRound className="size-5 md:size-6" />
-          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Individuals</p>
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Particulares</p>
         </div>
         <div className="w-px h-6 md:h-8 bg-primary/20"></div>
         <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
           <UsersRound className="size-5 md:size-6" />
-          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Teams</p>
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Empresas</p>
         </div>
         <div className="w-px h-6 md:h-8 bg-primary/20"></div>
         <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
           <Building2 className="size-5 md:size-6" />
-          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Enterprises</p>
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Constructoras</p>
         </div>
       </motion.div>
     </div>
@@ -192,18 +204,17 @@ export default function Home() {
       <div className="relative">
         <Image
           src={hero}
-          alt="Professional Training"
+          alt="Servicios de Grúas y Electromecánica"
           className="object-cover w-full h-auto rounded-3xl border-4 border-white"
           layout="responsive"
           placeholder="blur"
         />
-        {/* Se eliminó el icono de play */}
       </div>
 
       {/* Segunda imagen con tamaño original */}
       <Image
         src={hero2}
-        alt="Business Consulting"
+        alt="Servicios de Construcción y Mantenimiento"
         className="object-cover max-h-[200px] rounded-3xl mt-8 border-4 border-white"
         layout="responsive"
         placeholder="blur"
@@ -220,7 +231,7 @@ export default function Home() {
       whileInView={{ opacity: 1 }}
       className="text-center text-secondary font-bold text-xl mb-12 uppercase tracking-wide"
     >
-      Trusted by Industry Leaders
+      Empresas que Confían en Nosotros
     </motion.h3>
     
     {/* Container with horizontal scroll for mobile */}
@@ -228,7 +239,7 @@ export default function Home() {
       {/* Scrollable container - hidden on desktop */}
       <div className="flex overflow-x-auto pb-6 hide-scrollbar md:hidden">
         <div className="flex gap-8 min-w-max px-4">
-          {[1, 2, 3, 4].map((item, index) => (
+          {[1, 2, 3, 4, 5].map((item, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -237,7 +248,7 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               className="flex-shrink-0 grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
             >
-              <Image src={claro} alt="Claro" width={120} />
+              <Image src={claro} alt="Cliente" width={120} />
             </motion.div>
           ))}
         </div>
@@ -245,7 +256,7 @@ export default function Home() {
       
       {/* Desktop layout - centered without scroll */}
       <div className="hidden md:flex justify-center gap-8 px-6">
-        {[1, 2, 3, 4].map((item, index) => (
+        {[1, 2, 3, 4, 5].map((item, index) => (
           <motion.div 
             key={index}
             initial={{ opacity: 0, y: 20 }}
@@ -254,7 +265,7 @@ export default function Home() {
             whileHover={{ scale: 1.05 }}
             className="grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
           >
-            <Image src={claro} alt="Claro" width={150} />
+            <Image src={claro} alt="Cliente" width={150} />
           </motion.div>
         ))}
       </div>
@@ -305,11 +316,10 @@ export default function Home() {
         whileHover={{ scale: 1.05 }}
         className="inline-block text-sm font-bold text-white border-2 border-white px-8 py-4 rounded-full bg-white/10 cursor-pointer uppercase tracking-wide"
       >
-        Our Services
+        Nuestros Servicios
       </motion.h2>
       <h2 className="md:text-6xl text-4xl font-bold text-white mt-8 leading-tight max-w-4xl mx-auto">
-        Comprehensive Solutions for 
-        <span className="block">Professional Growth</span>
+        Soluciones Integrales para Todas sus Necesidades
       </h2>
     </motion.div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-12">
@@ -335,9 +345,9 @@ export default function Home() {
   {/* Bottom Cards - Visible only on desktop */}
   <div className="hidden lg:grid lg:grid-cols-3 gap-8 max-w-screen-2xl w-full absolute -bottom-28 left-1/2 transform -translate-x-1/2 px-6 z-20">
     {[
-      { icon: Star, title: "Affordable Rates", desc: "Competitive pricing for all budgets" },
-      { icon: ThumbsUp, title: "Reliable Services", desc: "Consistent quality you can trust" },
-      { icon: ShieldCheck, title: "Professional Expertise", desc: "Industry-leading specialists" }
+      { icon: Star, title: "Precios Competitivos", desc: "Tarifas justas y transparentes para todos los servicios" },
+      { icon: ThumbsUp, title: "Servicio Confiable", desc: "Más de 20 años de experiencia respaldan nuestro trabajo" },
+      { icon: ShieldCheck, title: "Personal Calificado", desc: "Profesionales certificados y altamente capacitados" }
     ].map((item, index) => (
       <motion.div
         key={index}
@@ -358,12 +368,12 @@ export default function Home() {
 {/* Additional Cards Section - Visible only on mobile and tablet */}
 <section className="lg:hidden bg-darkblue py-16">
   <div className="max-w-screen-xl mx-auto px-6">
-    <h2 className="text-3xl font-bold text-white text-center mb-12">Why Choose Us</h2>
+    <h2 className="text-3xl font-bold text-white text-center mb-12">¿Por Qué Elegirnos?</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[
-        { icon: Star, title: "Affordable Rates", desc: "Competitive pricing for all budgets" },
-        { icon: ThumbsUp, title: "Reliable Services", desc: "Consistent quality you can trust" },
-        { icon: ShieldCheck, title: "Professional Expertise", desc: "Industry-leading specialists" }
+        { icon: Star, title: "Precios Competitivos", desc: "Tarifas justas y transparentes para todos los servicios" },
+        { icon: ThumbsUp, title: "Servicio Confiable", desc: "Más de 20 años de experiencia respaldan nuestro trabajo" },
+        { icon: ShieldCheck, title: "Personal Calificado", desc: "Profesionales certificados y altamente capacitados" }
       ].map((item, index) => (
         <motion.div
           key={index}
@@ -390,21 +400,22 @@ export default function Home() {
             whileInView={{ opacity: 1, x: 0 }}
             className="lg:w-3/5"
           >
-            <h2 className="lg:text-7xl md:text-5xl text-4xl font-bold text-secondary leading-tight mb-8">
-              Proving Excellence Through
-              <span className="text-primary block">Training & Consulting</span>
+            <h2 className="lg:text-6xl md:text-5xl text-4xl font-bold text-secondary leading-tight mb-8">
+              Más de 20 Años Demostrando
+              <span className="text-primary"> Excelencia</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
-              With over two decades of experience, we&apos;ve helped thousands of organizations
-              transform their potential into measurable success. Our proven methodologies 
-              and expert guidance ensure sustainable growth and lasting impact.
+              En Multisemar nos especializamos en brindar soluciones integrales con los más altos 
+              estándares de calidad. Nuestra trayectoria de más de dos décadas nos avala como 
+              líderes en servicios de grúas, electromecánica, instalaciones eléctricas y construcción 
+              en La Romana y toda la región este del país.
             </p>
             
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               className="mt-8 bg-primary text-white px-8 py-4 rounded-2xl font-bold border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2"
             >
-              Learn More About Us
+              Conozca Más Sobre Nosotros
               <ArrowRight className="size-5" />
             </motion.button>
           </motion.div>
@@ -416,9 +427,9 @@ export default function Home() {
           >
             <div className="grid grid-cols-1 gap-8">
               {[
-                { number: "125+", label: "Countries Served Worldwide", color: "text-primary" },
-                { number: "20+", label: "Years of Industry Experience", color: "text-secondary" },
-                { number: "15k+", label: "Client Engagements per Year", color: "text-primary" }
+                { number: "20+", label: "Años de Experiencia", color: "text-primary" },
+                { number: "150+", label: "Empleados Calificados", color: "text-secondary" },
+                { number: "5k+", label: "Proyectos Completados", color: "text-primary" }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -446,11 +457,12 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="md:text-6xl text-4xl font-bold text-secondary mb-6">
-              What Our <span className="text-primary">Clients Say</span>
+              Lo Que Dicen Nuestros 
+              <span className="text-primary"> Clientes</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-              Don&apos;t just take our word for it. Here&apos;s what industry leaders and satisfied clients 
-              have to say about their experience working with us.
+              La satisfacción de nuestros clientes es nuestra mayor garantía. Conozca las experiencias 
+              de quienes han confiado en nuestros servicios.
             </p>
           </motion.div>
 
@@ -477,8 +489,8 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             className="md:text-7xl text-5xl font-black text-white leading-tight mb-6"
           >
-            Ready to Transform 
-            <span className="text-primary block">Your Business?</span>
+            ¿Listo para Su 
+            <span className="text-primary"> Próximo Proyecto?</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -486,8 +498,8 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-white/80 text-xl max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Take the first step towards excellence. Let&apos;s discuss how our proven strategies 
-            can accelerate your growth and achieve your business objectives.
+            Contáctenos hoy mismo y descubra cómo nuestros servicios pueden hacer la diferencia 
+            en su próximo proyecto. Calidad, confianza y resultados garantizados.
           </motion.p>
           <motion.button
             initial={{ opacity: 0, y: 20 }}
@@ -497,7 +509,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
             className="bg-primary text-white rounded-2xl py-5 px-10 font-black text-xl border-2 border-primary hover:bg-white hover:text-primary transition-all duration-300 flex items-center gap-3 mx-auto"
           >
-            Start Your Transformation
+            Solicitar Servicios
             <ArrowRight className="size-6" />
           </motion.button>
         </div>
@@ -516,13 +528,15 @@ export default function Home() {
               whileHover={{ scale: 1.05 }}
               className="inline-block text-sm font-bold text-secondary border-2 border-secondary px-8 py-4 rounded-full bg-white cursor-pointer uppercase tracking-wide mb-8"
             >
-              Get In Touch
+              Contáctenos
             </motion.h2>
             <h2 className="md:text-6xl text-4xl font-bold text-secondary leading-tight mb-6">
-              Let&apos;s Start a <span className="text-primary">Conversation</span>
+              Estamos para 
+              <span className="text-primary"> ayudarle</span>
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              Ready to transform your business? Get in touch and let&apos;s discuss how we can help you achieve excellence through our proven training and consulting services.
+              Póngase en contacto con nuestro equipo para solicitar cotizaciones, programar servicios 
+              o resolver cualquier consulta. Estamos disponibles las 24 horas para emergencias.
             </p>
           </motion.div>
 
@@ -541,14 +555,14 @@ export default function Home() {
                       className="space-y-3"
                     >
                       <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="name">
-                        Full Name *
+                        Nombre Completo *
                       </label>
                       <input 
                         className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
                         type="text" 
                         id="name" 
                         name="name"
-                        placeholder="Enter your full name"
+                        placeholder="Ingrese su nombre completo"
                       />
                     </motion.div>
                     
@@ -557,14 +571,14 @@ export default function Home() {
                       className="space-y-3"
                     >
                       <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="email">
-                        Email Address *
+                        Correo Electrónico *
                       </label>
                       <input 
                         className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
                         type="email" 
                         id="email" 
                         name="email"
-                        placeholder="your.email@company.com"
+                        placeholder="su.correo@empresa.com"
                       />
                     </motion.div>
                   </div>
@@ -575,14 +589,14 @@ export default function Home() {
                       className="space-y-3"
                     >
                       <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="phone">
-                        Phone Number
+                        Teléfono
                       </label>
                       <input 
                         className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
                         type="tel" 
                         id="phone" 
                         name="phone"
-                        placeholder="+1 (555) 123-4567"
+                        placeholder="+1 (809) 123-4567"
                       />
                     </motion.div>
                     
@@ -591,14 +605,14 @@ export default function Home() {
                       className="space-y-3"
                     >
                       <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="company">
-                        Company Name
+                        Empresa
                       </label>
                       <input 
                         className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
                         type="text" 
                         id="company" 
                         name="company"
-                        placeholder="Your Company Ltd."
+                        placeholder="Su Empresa S.R.L."
                       />
                     </motion.div>
                   </div>
@@ -607,15 +621,37 @@ export default function Home() {
                     whileHover={{ y: -2 }}
                     className="space-y-3"
                   >
+                    <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="service">
+                      Servicio de Interés *
+                    </label>
+                    <select 
+                      className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
+                      id="service" 
+                      name="service"
+                    >
+                      <option value="">Seleccione un servicio</option>
+                      <option value="gruas">Servicios de Grúas</option>
+                      <option value="electromecanica">Mantenimiento Electromecánico</option>
+                      <option value="electricas">Instalaciones Eléctricas</option>
+                      <option value="construccion">Servicios de Construcción</option>
+                      <option value="ingenieria">Ingeniería y Consultoría</option>
+                      <option value="mantenimiento">Mantenimiento General</option>
+                    </select>
+                  </motion.div>
+                  
+                  <motion.div 
+                    whileHover={{ y: -2 }}
+                    className="space-y-3"
+                  >
                     <label className="text-secondary text-sm font-bold tracking-wide uppercase block" htmlFor="message">
-                      Your Message *
+                      Mensaje *
                     </label>
                     <textarea 
                       className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500 min-h-[150px] resize-none" 
                       id="message" 
                       name="message" 
                       rows="6"
-                      placeholder="Tell us about your project and how we can help you achieve your goals..."
+                      placeholder="Describa su proyecto o necesidad y cómo podemos ayudarle..."
                     ></textarea>
                   </motion.div>
                   
@@ -625,7 +661,7 @@ export default function Home() {
                     type="submit"
                     className="w-full bg-primary text-white rounded-2xl py-5 px-8 font-black text-xl border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center justify-center gap-3"
                   >
-                    Send Message
+                    Enviar Mensaje
                     <ArrowRight className="size-6" />
                   </motion.button>
                 </form>
@@ -642,21 +678,21 @@ export default function Home() {
               {[
                 {
                   icon: MapPinned,
-                  title: "Visit Our Office",
-                  content: "952 Bald Hill Street\nAsheville, NC 28803\nUnited States",
-                  extra: "Open Mon - Fri: 9:00 AM - 6:00 PM"
+                  title: "Visite Nuestras Oficinas",
+                  content: "Calle Principal #123, Melisa\nLa Romana, República Dominicana",
+                  extra: "Horario: Lunes a Viernes 8:00 AM - 6:00 PM"
                 },
                 {
                   icon: Phone,
-                  title: "Call Us Now",
-                  content: "+1 (809) 123-1234",
-                  extra: "Available 24/7 for urgent inquiries"
+                  title: "Llámenos Ahora",
+                  content: "+1 (809) 556-7890\n+1 (809) 556-EMER (3637) - Emergencias 24/7",
+                  extra: "Disponibles las 24 horas para emergencias"
                 },
                 {
                   icon: Mail,
-                  title: "Email Us",
-                  content: "hello@multisemar.com",
-                  extra: "We reply within 24 hours"
+                  title: "Escríbanos",
+                  content: "info@multisemar.com\ncotizaciones@multisemar.com",
+                  extra: "Respondemos en menos de 24 horas"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -682,27 +718,27 @@ export default function Home() {
                 </motion.div>
               ))}
 
-              {/* CTA Card */}
-              {/* <motion.div
+              {/* Emergency Card */}
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-primary/5 border-2 border-primary rounded-3xl p-8 hover:bg-primary/10 transition-all duration-300"
+                className="bg-red-50 border-2 border-red-200 rounded-3xl p-8 hover:bg-red-100 transition-all duration-300"
               >
                 <div className="text-center">
-                  <h3 className="text-secondary text-2xl font-bold mb-4">Need Immediate Assistance?</h3>
-                  <p className="text-gray-600 mb-6 text-lg">Schedule a free 30-minute consultation call with our experts</p>
+                  <h3 className="text-red-700 text-2xl font-bold mb-4">¿Emergencia las 24 horas?</h3>
+                  <p className="text-red-600 mb-6 text-lg">Servicio de grúas y asistencia disponible todo el día, todos los días</p>
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-primary text-white px-8 py-4 rounded-2xl font-bold border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2 mx-auto"
+                    className="bg-red-600 text-white px-8 py-4 rounded-2xl font-bold border-2 border-red-600 hover:bg-transparent hover:text-red-600 transition-all duration-300 flex items-center gap-2 mx-auto"
                   >
-                    Book a Free Call
+                    Llamar Emergencia
                     <Phone className="size-5" />
                   </motion.button>
                 </div>
-              </motion.div> */}
+              </motion.div>
             </motion.div>
           </div>
         </div>
