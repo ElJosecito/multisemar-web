@@ -187,7 +187,7 @@ export default function Home() {
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="lg:w-2/5 lg:pt-32 pt-12 lg:pt-16"
+      className="lg:w-2/5 lg:pt-32 pt-12"
     >
       <div className="relative">
         <Image
