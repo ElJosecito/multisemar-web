@@ -83,6 +83,7 @@ const InfinityScroll = ({ animation }) => {
                 {/* Testimonial text */}
                 <div className="flex-1 w-full">
                   <p className="text-sm leading-relaxed text-gray-700 line-clamp-6">
+                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     "{testimonial.description}"
                   </p>
                 </div>
@@ -135,6 +136,7 @@ const InfinityScroll = ({ animation }) => {
                 {/* Testimonial text */}
                 <div className="flex-1 w-full">
                   <p className="text-sm leading-relaxed text-gray-700 line-clamp-6">
+                     {/* eslint-disable-next-line react/no-unescaped-entities */}
                     "{testimonial.description}"
                   </p>
                 </div>
