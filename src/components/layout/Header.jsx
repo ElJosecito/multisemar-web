@@ -5,12 +5,11 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-// logo vital dental center
-// import logo from '../../images/logo_vitaldental.png'
+// logo de Multisemar
+// import logo from '../../images/logo_multisemar.png'
 
 // icons
-import { Menu, X } from 'lucide-react'
-
+import { Menu, X, Phone } from 'lucide-react'
 
 function Header() {
 
@@ -26,7 +25,6 @@ function Header() {
         })
     }, [])
 
-
     // mobile menu
     const [menu, setMenu] = useState(false)
 
@@ -34,39 +32,49 @@ function Header() {
         setMenu(!menu)
     }
 
-
     // display mobile menu
     const mobileMenu = menu ? 'flex' : 'hidden'
 
     return (
-        <header className='w-full flex justify-center fixed z-[10000]  '>
-            <div className={` w-full  px-0`}>
-                <nav className={`flex justify-between items-center w-full h-20 px-8 rounded-b-md backdrop-blur-lg transition-all duration-500  ${scroll ? 'bg-[#E6F6FE] ' : 'bg-transparent'}`}>
-                    <div className='text-2xl font-bold'>
-                        {/* <Image src={logo} alt="" /> */}
-                        Logo
+        <header className='w-full flex justify-center fixed z-[10000]'>
+            <div className={`w-full px-0`}>
+                <nav className={`flex justify-between items-center w-full h-20 px-8 rounded-b-md backdrop-blur-lg transition-all duration-500 ${scroll ? 'bg-[#E6F6FE]' : 'bg-transparent'}`}>
+                    <div className='text-2xl font-bold flex items-center'>
+                        {/* <Image src={logo} alt="Logo Multisemar" width={150} height={50} /> */}
+                        <span>Multisemar</span>
                     </div>
                     <ul className='lg:flex gap-8 font-semibold text-base hidden'>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm'>
-                            <a href='/#'>Home</a>
+                        <motion.li whileHover={{ scale: 1.1 }} className='text-sm'>
+                            <a href='/#'>Inicio</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm'>
-                            <a href='#services'>Services</a>
+                        <motion.li whileHover={{ scale: 1.1 }} className='text-sm'>
+                            <a href='#services'>Servicios</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm'>
-                            <a href='#about'>About</a>
+                        <motion.li whileHover={{ scale: 1.1 }} className='text-sm'>
+                            <a href='#about'>Nosotros</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm'>
-                            <a href='#contact'>Contact</a>
+                        <motion.li whileHover={{ scale: 1.1 }} className='text-sm'>
+                            <a href='#contact'>Contacto</a>
                         </motion.li>
                     </ul>
 
-                    <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className='bg-primary text-white px-8 py-4 text-sm rounded-xl font-semibold hidden lg:flex'>
-                        Book Now
-                    </motion.button>
+                    <div className='hidden lg:flex items-center gap-4'>
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            href="tel:+18095567890"
+                            className='flex items-center gap-2 text-primary font-semibold'
+                        >
+                            <Phone size={18} />
+                            <span>(809) 556-7890</span>
+                        </motion.a>
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className='bg-primary text-white px-6 py-3 text-sm rounded-xl font-semibold'
+                        >
+                            Solicitar Cotización
+                        </motion.button>
+                    </div>
 
                     {/* mobile menu */}
                     <div className='lg:hidden flex items-center'>
@@ -75,24 +83,35 @@ function Header() {
                         </button>
                     </div>
 
-                    <ul className={`flex flex-col gap-8 font-semibold text-base ${mobileMenu} lg:hidden absolute top-20 left-0 right-0 ${scroll ? 'bg-[#E6F6FE] shadow-lg' : 'bg-white'} rounded-md shadow-lg p-8 transition-all duration-500`}>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm' onClick={handleMenu}>
-                            <a href='/#'>Home</a>
+                    <ul className={`flex flex-col gap-6 font-semibold text-base ${mobileMenu} lg:hidden absolute top-20 left-0 right-0 ${scroll ? 'bg-[#E6F6FE] shadow-lg' : 'bg-white'} rounded-b-md shadow-lg p-8 transition-all duration-500`}>
+                        <motion.li whileHover={{ scale: 1.05 }} className='text-sm py-2' onClick={handleMenu}>
+                            <a href='/#'>Inicio</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm' onClick={handleMenu}>
-                            <a href='#services'>Services</a>
+                        <motion.li whileHover={{ scale: 1.05 }} className='text-sm py-2' onClick={handleMenu}>
+                            <a href='#services'>Servicios</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm' onClick={handleMenu}>
-                            <a href='#about'>About</a>
+                        <motion.li whileHover={{ scale: 1.05 }} className='text-sm py-2' onClick={handleMenu}>
+                            <a href='#about'>Nosotros</a>
                         </motion.li>
-                        <motion.li whileHover={{ scale: 1.2 }} className='text-sm' onClick={handleMenu}>
-                            <a href='#contact'>Contact</a>
+                        <motion.li whileHover={{ scale: 1.05 }} className='text-sm py-2' onClick={handleMenu}>
+                            <a href='#contact'>Contacto</a>
                         </motion.li>
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            href="tel:+18095567890"
+                            className='flex items-center gap-2 text-primary font-semibold py-2'
+                            onClick={handleMenu}
+                        >
+                            <Phone size={18} />
+                            <span>(809) 556-7890</span>
+                        </motion.a>
                         <motion.button
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            className='bg-primary text-white px-8 py-4 text-sm rounded-xl font-semibold'>
-                            Book Now
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className='bg-primary text-white px-6 py-3 text-sm rounded-xl font-semibold mt-2'
+                            onClick={handleMenu}
+                        >
+                            Solicitar Cotización
                         </motion.button>
                     </ul>
                 </nav>

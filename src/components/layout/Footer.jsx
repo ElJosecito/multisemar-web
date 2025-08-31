@@ -2,59 +2,130 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-
-
-// react icons, fontawesome 6 icons
-import { Facebook, Instagram, LinkedinIcon, Youtube } from 'lucide-react';
+import { Facebook, Instagram, LinkedinIcon, Youtube, Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
-
 
 function Footer() {
     return (
-        <footer className='w-full flex flex-col items-center bottom-0 bg-darkblue text-back_white'>
-            <div className='max-w-screen-2xl w-full pt-4'>
-                <nav className='flex justify-between items-center w-full h-24 px-8 border-b-2 border-back_white'>
-                    <div className='text-2xl font-bold'>
-                        {/* <Image src={logo} alt="" /> */}
-                        Logo
+        <footer className='w-full flex flex-col items-center bottom-0 bg-darkblue text-white'>
+            <div className='max-w-screen-2xl w-full pt-8 px-4 md:px-8'>
+                {/* Main footer content */}
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8 border-b border-gray-600'>
+                    {/* Company info */}
+                    <div className='flex flex-col gap-4'>
+                        <div className='text-2xl font-bold mb-4'>
+                            <Image 
+                                src="/images/logo_multisemar.png" 
+                                alt="Logo Multisemar" 
+                                width={180} 
+                                height={60}
+                            />
+                        </div>
+                        <p className='text-gray-300 text-sm leading-relaxed'>
+                            Más de 20 años brindando servicios especializados en grúas, electromecánica, 
+                            instalaciones eléctricas y construcción en La Romana y toda la región.
+                        </p>
+                        <div className='flex gap-4 mt-4'>
+                            <motion.a 
+                                whileHover={{ scale: 1.2, y: -2 }}
+                                href="#" 
+                                className='flex justify-center items-center h-10 w-10 bg-primary rounded-full hover:bg-primary/80 transition-colors'
+                            >
+                                <Facebook className='text-white' size={18} />
+                            </motion.a>
+                            <motion.a 
+                                whileHover={{ scale: 1.2, y: -2 }}
+                                href="#" 
+                                className='flex justify-center items-center h-10 w-10 bg-primary rounded-full hover:bg-primary/80 transition-colors'
+                            >
+                                <Instagram className='text-white' size={18} />
+                            </motion.a>
+                            <motion.a 
+                                whileHover={{ scale: 1.2, y: -2 }}
+                                href="#" 
+                                className='flex justify-center items-center h-10 w-10 bg-primary rounded-full hover:bg-primary/80 transition-colors'
+                            >
+                                <LinkedinIcon className='text-white' size={18} />
+                            </motion.a>
+                        </div>
                     </div>
-                    <ul className='md:flex md:gap-8 gap-4 font-medium text-base hidden'>
-                        <motion.li whileHover={{ scale: 1.3 }}>
-                            <a href='/'>Home</a>
-                        </motion.li>
-                        <motion.li whileHover={{ scale: 1.3 }}>
-                            <a href='/services'>Services</a>
-                        </motion.li>
-                        <motion.li whileHover={{ scale: 1.3 }}>
-                            <a href='/about'>About</a>
-                        </motion.li>
-                        <motion.li whileHover={{ scale: 1.3 }}>
-                            <a href='/contact'>Contact</a>
-                        </motion.li>
-                    </ul>
-                </nav>
 
-                <div className='w-full h-24 flex flex-col md:flex-row justify-center md:justify-between items-start md:items-center md:gap-4 my-8 px-5'>
-                    <p className='text-back_white text-sm py-3'>© 2021 All rights reserved</p>
-                    {/* socials */}
-                    <div className='flex gap-4 '>
-                        <div className='flex justify-center items-center h-9 w-9 bg-darkblue rounded-full'>
-                            <Facebook className='text-white ' />
-                        </div>
-                        <div className='flex justify-center items-center h-9 w-9 bg-darkblue rounded-full'>
-                            <Instagram className='text-white ' />
-                        </div>
-                        <div className='flex justify-center items-center h-9 w-9 bg-darkblue rounded-full'>
-                            <LinkedinIcon className='text-white ' />
-                        </div>
-                        <div className='flex justify-center items-center h-9 w-9 bg-darkblue rounded-full'>
-                            <Youtube className='text-white ' />
+                    {/* Services */}
+                    <div className='flex flex-col gap-4'>
+                        <h3 className='text-lg font-semibold mb-2'>Nuestros Servicios</h3>
+                        <ul className='space-y-3'>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#services" className='text-gray-300 hover:text-primary text-sm transition-colors'>Servicios de Grúas</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#services" className='text-gray-300 hover:text-primary text-sm transition-colors'>Mantenimiento Electromecánico</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#services" className='text-gray-300 hover:text-primary text-sm transition-colors'>Instalaciones Eléctricas</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#services" className='text-gray-300 hover:text-primary text-sm transition-colors'>Servicios de Construcción</a>
+                            </motion.li>
+                        </ul>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div className='flex flex-col gap-4'>
+                        <h3 className='text-lg font-semibold mb-2'>Enlaces Rápidos</h3>
+                        <ul className='space-y-3'>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#" className='text-gray-300 hover:text-primary text-sm transition-colors'>Inicio</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#services" className='text-gray-300 hover:text-primary text-sm transition-colors'>Servicios</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#about" className='text-gray-300 hover:text-primary text-sm transition-colors'>Nosotros</a>
+                            </motion.li>
+                            <motion.li whileHover={{ x: 5 }}>
+                                <a href="#contact" className='text-gray-300 hover:text-primary text-sm transition-colors'>Contacto</a>
+                            </motion.li>
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div className='flex flex-col gap-4'>
+                        <h3 className='text-lg font-semibold mb-2'>Contacto</h3>
+                        <div className='space-y-3'>
+                            <motion.div whileHover={{ x: 5 }} className='flex items-center gap-3'>
+                                <MapPin className='text-primary' size={18} />
+                                <span className='text-gray-300 text-sm'>Calle Principal #123, Melisa, La Romana</span>
+                            </motion.div>
+                            <motion.div whileHover={{ x: 5 }} className='flex items-center gap-3'>
+                                <Phone className='text-primary' size={18} />
+                                <span className='text-gray-300 text-sm'>(809) 556-7890</span>
+                            </motion.div>
+                            <motion.div whileHover={{ x: 5 }} className='flex items-center gap-3'>
+                                <Mail className='text-primary' size={18} />
+                                <span className='text-gray-300 text-sm'>info@multisemar.com</span>
+                            </motion.div>
+                            <motion.div whileHover={{ x: 5 }} className='flex items-center gap-3'>
+                                <Phone className='text-primary' size={18} />
+                                <span className='text-gray-300 text-sm'>(809) 556-EMER (3637) - Emergencias 24/7</span>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='w-full h-16 bg-[#011632] flex justify-center items-center'>
-                <p className='text-white text-sm'>© 2021 All rights reserved</p>
+
+                {/* Copyright */}
+                <div className='w-full py-6 flex flex-col md:flex-row justify-between items-center gap-4'>
+                    <p className='text-gray-400 text-sm text-center md:text-left'>
+                        © {new Date().getFullYear()} Multisemar. Todos los derechos reservados.
+                    </p>
+                    <div className='flex gap-6 text-sm text-gray-400'>
+                        <motion.a whileHover={{ scale: 1.05 }} href="#" className='hover:text-primary transition-colors'>
+                            Términos y Condiciones
+                        </motion.a>
+                        <motion.a whileHover={{ scale: 1.05 }} href="#" className='hover:text-primary transition-colors'>
+                            Política de Privacidad
+                        </motion.a>
+                    </div>
+                </div>
             </div>
         </footer>
     )
