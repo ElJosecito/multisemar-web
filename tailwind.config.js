@@ -10,9 +10,12 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: "#1F68F6",
+        // primary color changed from blue to requested red #E12926
+        primary: "#E12926",
         secondary: "#011632",
-        darkblue: "#0C1524",
+  // legacy name kept (darkblue) but now points to a very dark variant of primary red
+  // dark variant chosen to be visually 'bien dark' while matching the brand red
+  darkblue: "#3B0B0A",
         back_white: "#f4f4f4",
       },
       animation: {

@@ -23,13 +23,14 @@ const getIconByType = (type) => {
 const getColorByType = (type) => {
   switch(type) {
     case 'individual':
-      return 'text-blue-600 bg-blue-100';
+      // use design token primary (now set to #E12926)
+      return 'text-primary bg-primary/10';
     case 'empresa':
       return 'text-green-600 bg-green-100';
     case 'constructora':
       return 'text-orange-600 bg-orange-100';
     default:
-      return 'text-blue-600 bg-blue-100';
+      return 'text-primary bg-primary/10';
   }
 };
 

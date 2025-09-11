@@ -24,12 +24,21 @@ import {
   Mail,
   ArrowRight,
   Play,
+  ThermometerSnowflake,
   Wrench,
   Truck,
   Cog,
   Zap,
   HardHat,
-  Tool
+  Tool,
+  Home,
+  Construction,
+  Settings,
+  Cctv,
+  Droplets,
+  Generator,
+  Trees,
+  Palette
 } from 'lucide-react';
 
 //images
@@ -49,12 +58,20 @@ function IconRenderer({ iconName, className = "size-16", ...props }) {
     Award,
     BookOpen,
     Briefcase,
+    ThermometerSnowflake,
     Wrench,
     Truck,
     Cog,
     Zap,
     HardHat,
-    Tool
+    Tool,
+    Construction,
+    Settings,
+    Cctv,
+    Droplets,
+    Generator,
+    Trees,
+    Palette
   };
 
   const IconComponent = iconMap[iconName];
@@ -67,52 +84,52 @@ function IconRenderer({ iconName, className = "size-16", ...props }) {
   return <IconComponent className={className} {...props} />;
 }
 
-// Services Data
+// Services Data - Updated to match Multiservicios Martínez
 const servicesData = [
   {
     id: 1,
-    icon: "Truck",
-    title: "Servicios de Grúas",
-    description: "Servicios profesionales de grúas las 24 horas para transporte pesado, rescate vehicular y apoyo en obras de construcción."
+    icon: "Construction",
+    title: "Infraestructura Civil",
+    description: "Construcción de casetas, localidades, cercados perimetrales, diseño y construcción de imbornales y registros sanitarios y eléctricos."
   },
   {
     id: 2,
-    icon: "Wrench",
-    title: "Mantenimiento Electromecánico",
-    description: "Soluciones integrales en electromecánica para vehículos, maquinaria industrial y equipos especializados."
+    icon: "Settings",
+    title: "Reparación Estructuras",
+    description: "Reparación y mantenimiento de estructuras metálicas, fabricación e instalación de canaletas."
   },
   {
     id: 3,
     icon: "Zap",
     title: "Instalaciones Eléctricas",
-    description: "Diseño, instalación y mantenimiento de sistemas eléctricos residenciales, comerciales e industriales."
+    description: "Diseño e instalación de facilidades eléctricas residenciales e industriales, reacondicionamiento de sistemas eléctricos."
   },
   {
     id: 4,
     icon: "Cog",
-    title: "Ingeniería y Consultoría",
-    description: "Asesoría técnica especializada, planificación de proyectos y soluciones de ingeniería personalizadas."
+    title: "Automatización Industrial",
+    description: "Automatización industrial, domótica y diseño de circuitos y tarjetas electrónicas."
   },
   {
     id: 5,
-    icon: "HardHat",
-    title: "Servicios de Construcción",
-    description: "Ejecución de obras civiles, remodelaciones y construcciones con los más altos estándares de calidad."
+    icon: "ThermometerSnowflake",
+    title: "Sistemas de Refrigeración",
+    description: "Diseño e instalación de sistemas de refrigeración doméstica e industrial, mantenimiento de equipos de refrigeración."
   },
   {
     id: 6,
     icon: "Wrench",
-    title: "Mantenimiento General",
-    description: "Servicios de mantenimiento preventivo y correctivo para todo tipo de equipos e instalaciones."
+    title: "Generadores de Emergencia",
+    description: "Instalación, reparación y mantenimiento de sistemas de generadores de emergencia."
   }
 ];
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <Header />
 {/* HERO SECTION - Enhanced */}
-<section className="flex flex-col items-center py-2 bg-white">
+<section className="flex flex-col items-center py-2 bg-white h-screen">
   <div className="max-w-screen-2xl w-full flex flex-col lg:flex-row px-6 lg:px-12">
     <div className="flex flex-col items-center lg:items-start lg:w-3/5 pt-20 lg:pt-32 text-center lg:text-start">
       {/* Main Title - Enhanced */}
@@ -122,8 +139,8 @@ export default function Home() {
         transition={{ duration: 0.8 }}
         className="lg:text-6xl md:text-5xl text-4xl font-bold text-secondary leading-[1.1] tracking-tight"
       >
-        Multisemar: Soluciones Integrales en 
-        <span className="text-primary mt-2 "> Multiservicios</span>
+        Multiservicios Martínez: 
+        <span className="text-primary mt-2 block">Soluciones Integrales desde 1996</span>
       </motion.h1>
       
       {/* Description - Enhanced */}
@@ -133,8 +150,8 @@ export default function Home() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="text-base mt-6 lg:mt-8 text-gray-600 lg:pr-20 max-w-2xl leading-relaxed"
       >
-        Más de 20 años brindando servicios especializados en grúas, electromecánica, 
-        instalaciones eléctricas y construcción. Confiabilidad y excelencia en cada proyecto.
+        Más de 25 años brindando servicios especializados en electromecánica, infraestructuras civil e industrial. 
+        Confiabilidad y excelencia en cada proyecto con compromiso medio ambiental.
       </motion.p>
       
       {/* CTA Buttons - Enhanced */}
@@ -164,7 +181,7 @@ export default function Home() {
           </motion.div>
           <div className='ml-3 md:ml-4'>
             <p className='text-secondary font-bold text-xs md:text-sm uppercase tracking-wide'>Llámenos Ahora</p>
-            <p className='text-primary font-bold text-base md:text-lg'>+1 (809) 556-7890</p>
+            <p className='text-primary font-bold text-base md:text-lg'>809-550-8815</p>
           </div>
         </div>
       </motion.div>
@@ -189,7 +206,7 @@ export default function Home() {
         <div className="w-px h-6 md:h-8 bg-primary/20"></div>
         <div className="flex items-center text-secondary mx-2 md:mx-4 hover:text-primary transition-colors duration-300">
           <Building2 className="size-5 md:size-6" />
-          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Constructoras</p>
+          <p className='ml-2 md:ml-3 font-bold text-sm md:text-base'>Industrias</p>
         </div>
       </motion.div>
     </div>
@@ -204,7 +221,7 @@ export default function Home() {
       <div className="relative">
         <Image
           src={hero}
-          alt="Servicios de Grúas y Electromecánica"
+          alt="Servicios de Infraestructura y Electromecánica"
           className="object-cover w-full h-auto rounded-3xl border-4 border-white"
           layout="responsive"
           placeholder="blur"
@@ -214,87 +231,13 @@ export default function Home() {
       {/* Segunda imagen con tamaño original */}
       <Image
         src={hero2}
-        alt="Servicios de Construcción y Mantenimiento"
+        alt="Servicios de Construcción y Mantenimiento Industrial"
         className="object-cover max-h-[200px] rounded-3xl mt-8 border-4 border-white"
         layout="responsive"
         placeholder="blur"
       />
     </motion.div>
   </div>
-</section>
-
-{/* COMPANIES SECTION - Enhanced */}
-<section className="flex flex-col items-center py-20 bg-gray-50">
-  <div className="max-w-screen-2xl w-full px-4">
-    <motion.h3 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      className="text-center text-secondary font-bold text-xl mb-12 uppercase tracking-wide"
-    >
-      Empresas que Confían en Nosotros
-    </motion.h3>
-    
-    {/* Container with horizontal scroll for mobile */}
-    <div className="relative">
-      {/* Scrollable container - hidden on desktop */}
-      <div className="flex overflow-x-auto pb-6 hide-scrollbar md:hidden">
-        <div className="flex gap-8 min-w-max px-4">
-          {[1, 2, 3, 4, 5].map((item, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.05 }}
-              className="flex-shrink-0 grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
-            >
-              <Image src={claro} alt="Cliente" width={120} />
-            </motion.div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Desktop layout - centered without scroll */}
-      <div className="hidden md:flex justify-center gap-8 px-6">
-        {[1, 2, 3, 4, 5].map((item, index) => (
-          <motion.div 
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className="grayscale hover:grayscale-0 cursor-pointer opacity-60 hover:opacity-100 transition-all duration-300 rounded-2xl p-4"
-          >
-            <Image src={claro} alt="Cliente" width={150} />
-          </motion.div>
-        ))}
-      </div>
-      
-      {/* Gradient fade effects for mobile */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-gray-50 to-transparent md:hidden"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-gray-50 to-transparent md:hidden"></div>
-    </div>
-    
-    {/* Mobile indicator */}
-    <motion.p 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ delay: 0.5 }}
-      className="text-center text-gray-500 mt-4 text-sm md:hidden"
-    >
-      Desliza para ver más ›
-    </motion.p>
-  </div>
-
-  <style jsx>{`
-    .hide-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-    }
-    .hide-scrollbar::-webkit-scrollbar {
-      display: none;  /* Chrome, Safari and Opera */
-    }
-  `}</style>
 </section>
 
 {/* SERVICES SECTION - Enhanced */}
@@ -319,7 +262,7 @@ export default function Home() {
         Nuestros Servicios
       </motion.h2>
       <h2 className="md:text-6xl text-4xl font-bold text-white mt-8 leading-tight max-w-4xl mx-auto">
-        Soluciones Integrales para Todas sus Necesidades
+        Soluciones Integrales para Infraestructura Civil e Industrial
       </h2>
     </motion.div>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 mb-12">
@@ -345,9 +288,9 @@ export default function Home() {
   {/* Bottom Cards - Visible only on desktop */}
   <div className="hidden lg:grid lg:grid-cols-3 gap-8 max-w-screen-2xl w-full absolute -bottom-28 left-1/2 transform -translate-x-1/2 px-6 z-20">
     {[
-      { icon: Star, title: "Precios Competitivos", desc: "Tarifas justas y transparentes para todos los servicios" },
-      { icon: ThumbsUp, title: "Servicio Confiable", desc: "Más de 20 años de experiencia respaldan nuestro trabajo" },
-      { icon: ShieldCheck, title: "Personal Calificado", desc: "Profesionales certificados y altamente capacitados" }
+      { icon: Star, title: "Alta Calidad", desc: "Mantenemos los más altos estándares de calidad en todos nuestros servicios" },
+      { icon: ThumbsUp, title: "Experiencia", desc: "Más de 25 años de experiencia respaldan nuestro trabajo" },
+      { icon: ShieldCheck, title: "Compromiso Ambiental", desc: "Nos comprometemos con el medio ambiente en todos nuestros proyectos" }
     ].map((item, index) => (
       <motion.div
         key={index}
@@ -355,7 +298,7 @@ export default function Home() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: index * 0.1 }}
         whileHover={{ y: -8, scale: 1.03 }}
-        className="bg-darkblue border-2 border-darkblue hover:border-white/20 rounded-3xl p-8 text-white hover:bg-darkblue/90 transition-all duration-300 group shadow-xl"
+  className="bg-darkblue border-2 border-darkblue hover:border-white/20 rounded-3xl p-8 text-white hover:bg-darkblue/90 transition-all duration-300 group shadow-xl"
       >
         <item.icon className="size-12 mb-4 group-hover:scale-110 transition-transform duration-300" />
         <h3 className="text-2xl font-bold mb-2">{item.title}</h3>
@@ -366,14 +309,14 @@ export default function Home() {
 </section>
 
 {/* Additional Cards Section - Visible only on mobile and tablet */}
-<section className="lg:hidden bg-darkblue py-16">
+<section className="lg:hidden bg-primary py-16">
   <div className="max-w-screen-xl mx-auto px-6">
     <h2 className="text-3xl font-bold text-white text-center mb-12">¿Por Qué Elegirnos?</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       {[
-        { icon: Star, title: "Precios Competitivos", desc: "Tarifas justas y transparentes para todos los servicios" },
-        { icon: ThumbsUp, title: "Servicio Confiable", desc: "Más de 20 años de experiencia respaldan nuestro trabajo" },
-        { icon: ShieldCheck, title: "Personal Calificado", desc: "Profesionales certificados y altamente capacitados" }
+        { icon: Star, title: "Alta Calidad", desc: "Mantenemos los más altos estándares de calidad en todos nuestros servicios" },
+        { icon: ThumbsUp, title: "Experiencia", desc: "Más de 25 años de experiencia respaldan nuestro trabajo" },
+        { icon: ShieldCheck, title: "Compromiso Ambiental", desc: "Nos comprometemos con el medio ambiente en todos nuestros proyectos" }
       ].map((item, index) => (
         <motion.div
           key={index}
@@ -401,14 +344,14 @@ export default function Home() {
             className="lg:w-3/5"
           >
             <h2 className="lg:text-6xl md:text-5xl text-4xl font-bold text-secondary leading-tight mb-8">
-              Más de 20 Años Demostrando
+              Más de 25 Años Demostrando
               <span className="text-primary"> Excelencia</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
-              En Multisemar nos especializamos en brindar soluciones integrales con los más altos 
-              estándares de calidad. Nuestra trayectoria de más de dos décadas nos avala como 
-              líderes en servicios de grúas, electromecánica, instalaciones eléctricas y construcción 
-              en La Romana y toda la región este del país.
+              En Multiservicios Martínez nos especializamos en brindar soluciones integrales con los más altos 
+              estándares de calidad. Nuestra trayectoria desde 1996 nos avala como líderes en servicios de 
+              electromecánica e infraestructuras civil e industrial, manteniendo siempre nuestro compromiso 
+              medio ambiental.
             </p>
             
             <motion.button
@@ -427,9 +370,9 @@ export default function Home() {
           >
             <div className="grid grid-cols-1 gap-8">
               {[
-                { number: "20+", label: "Años de Experiencia", color: "text-primary" },
-                { number: "150+", label: "Empleados Calificados", color: "text-secondary" },
-                { number: "5k+", label: "Proyectos Completados", color: "text-primary" }
+                { number: "25+", label: "Años de Experiencia", color: "text-primary" },
+                { number: "100+", label: "Proyectos Completados", color: "text-secondary" },
+                { number: "3", label: "Áreas de Especialización", color: "text-primary" }
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -447,6 +390,253 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      {/* FULL SERVICES SECTION */}
+      <section className="flex flex-col items-center bg-gray-50 py-20">
+        <div className="max-w-screen-2xl w-full px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-center mb-16"
+          >
+            <h2 className="md:text-5xl text-4xl font-bold text-secondary mb-6">
+              Nuestro Catálogo Completo de 
+              <span className="text-primary"> Servicios</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+              Ofrecemos una amplia gama de servicios especializados para satisfacer todas sus necesidades de infraestructura y electromecánica.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Infraestructura Civil */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-primary/10 p-3 rounded-2xl mr-4">
+                  <Construction className="size-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-secondary">Infraestructura Civil</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Construcción de casetas, localidades, cercados perimetrales</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño y construcción de imbornales y registros sanitarios y eléctricos</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Reparación y mantenimiento de estructuras metálicas</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Fabricación e instalación de canaletas</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Pintura en general</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Plomería en general</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño y construcción de estructuras aligeradas</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Mantenimiento de limpieza interior, exterior y áreas verdes</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Trabajos en madera</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Ingeniería Electromecánica */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-primary/10 p-3 rounded-2xl mr-4">
+                  <Settings className="size-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-secondary">Ingeniería Electromecánica</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño e instalación de facilidades eléctricas residenciales e industriales</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Reacondicionamiento de sistemas eléctricos</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Automatización industrial</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Domótica y diseño de circuitos y tarjetas electrónicas</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño e instalación de sistemas de refrigeración doméstica e industrial</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Mantenimiento de equipos de refrigeración (aires acondicionados, cuartos fríos, chillers, VRF)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño, instalación y mantenimiento de sistemas de purificación de agua y ósmosis inversa</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Instalación, reparación y mantenimiento de sistemas de generadores de emergencia</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño de sistemas de puesta a tierra</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Instalación y mantenimiento de equipos eléctricos (bombas, motores, ventiladores, maquinarias)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Seguridad electrónica (cámaras, alarmas)</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Mantenimiento de ascensores y elevadores de carga</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño, instalación y mantenimiento de sistemas hidráulicos y neumáticos</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño, instalación y mantenimiento de sistemas para ayudas visuales en aeropuertos</span>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Industrial */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bg-white border-2 border-gray-200 rounded-3xl p-8 hover:border-primary/30 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                <div className="bg-primary/10 p-3 rounded-2xl mr-4">
+                  <Cog className="size-8 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold text-secondary">Servicios Industriales</h3>
+              </div>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Diseño, construcción y mantenimiento de naves industriales</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Metalurgia</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Mecanizados</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Corte computarizado</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Mantenimiento de naves industriales</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-primary/10 rounded-full p-1 mt-1 mr-3">
+                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  </div>
+                  <span>Servicios de alquiler de grúa (17 toneladas)</span>
+                </li>
+              </ul>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
 
       {/* TESTIMONIALS SECTION - Enhanced */}
       <section className="flex flex-col items-center pt-20 pb-32 bg-[#F5F8FF]">
@@ -475,7 +665,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA SECTION - Enhanced */}
+     {/* CTA SECTION - Enhanced */}
       <section className="flex flex-col items-center bg-secondary py-32 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -536,7 +726,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
               Póngase en contacto con nuestro equipo para solicitar cotizaciones, programar servicios 
-              o resolver cualquier consulta. Estamos disponibles las 24 horas para emergencias.
+              o resolver cualquier consulta. Estamos disponibles para atenderle.
             </p>
           </motion.div>
 
@@ -596,7 +786,7 @@ export default function Home() {
                         type="tel" 
                         id="phone" 
                         name="phone"
-                        placeholder="+1 (809) 123-4567"
+                        placeholder="809-550-8815"
                       />
                     </motion.div>
                     
@@ -630,12 +820,10 @@ export default function Home() {
                       name="service"
                     >
                       <option value="">Seleccione un servicio</option>
-                      <option value="gruas">Servicios de Grúas</option>
-                      <option value="electromecanica">Mantenimiento Electromecánico</option>
-                      <option value="electricas">Instalaciones Eléctricas</option>
-                      <option value="construccion">Servicios de Construcción</option>
-                      <option value="ingenieria">Ingeniería y Consultoría</option>
-                      <option value="mantenimiento">Mantenimiento General</option>
+                      <option value="infraestructura">Infraestructura Civil</option>
+                      <option value="electromecanica">Ingeniería Electromecánica</option>
+                      <option value="industrial">Servicios Industriales</option>
+                      <option value="gruas">Alquiler de Grúas</option>
                     </select>
                   </motion.div>
                   
@@ -677,22 +865,22 @@ export default function Home() {
             >
               {[
                 {
-                  icon: MapPinned,
-                  title: "Visite Nuestras Oficinas",
-                  content: "Calle Principal #123, Melisa\nLa Romana, República Dominicana",
-                  extra: "Horario: Lunes a Viernes 8:00 AM - 6:00 PM"
+                  icon: Mail,
+                  title: "Escríbanos",
+                  content: "multiserviciosmartinez@hotmail.com",
+                  extra: "Respondemos a la brevedad posible"
                 },
                 {
                   icon: Phone,
                   title: "Llámenos Ahora",
-                  content: "+1 (809) 556-7890\n+1 (809) 556-EMER (3637) - Emergencias 24/7",
-                  extra: "Disponibles las 24 horas para emergencias"
+                  content: "Tel: 809-550-8815\nCel: 829-523-8815",
+                  extra: "Disponibles para atender sus necesidades"
                 },
                 {
-                  icon: Mail,
-                  title: "Escríbanos",
-                  content: "info@multisemar.com\ncotizaciones@multisemar.com",
-                  extra: "Respondemos en menos de 24 horas"
+                  icon: MapPinned,
+                  title: "Ubicación",
+                  content: "República Dominicana\nServicios en toda la región",
+                  extra: "Atendemos proyectos a nivel nacional"
                 }
               ].map((item, index) => (
                 <motion.div
@@ -718,23 +906,23 @@ export default function Home() {
                 </motion.div>
               ))}
 
-              {/* Emergency Card */}
+              {/* Special Service Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="bg-red-50 border-2 border-red-200 rounded-3xl p-8 hover:bg-red-100 transition-all duration-300"
+                className="bg-primary/10 border-2 border-primary/20 rounded-3xl p-8 hover:bg-primary/20 transition-all duration-300"
               >
                 <div className="text-center">
-                  <h3 className="text-red-700 text-2xl font-bold mb-4">¿Emergencia las 24 horas?</h3>
-                  <p className="text-red-600 mb-6 text-lg">Servicio de grúas y asistencia disponible todo el día, todos los días</p>
+                  <h3 className="text-primary text-2xl font-bold mb-4">Servicio de Grúas</h3>
+                  <p className="text-secondary mb-6 text-lg">Disponemos de grúa de 17 toneladas para alquiler</p>
                   <motion.button
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className="bg-red-600 text-white px-8 py-4 rounded-2xl font-bold border-2 border-red-600 hover:bg-transparent hover:text-red-600 transition-all duration-300 flex items-center gap-2 mx-auto"
+                    className="bg-primary text-white px-8 py-4 rounded-2xl font-bold border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center gap-2 mx-auto"
                   >
-                    Llamar Emergencia
+                    Consultar Disponibilidad
                     <Phone className="size-5" />
                   </motion.button>
                 </div>

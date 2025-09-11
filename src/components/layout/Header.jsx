@@ -5,9 +5,6 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-// logo de Multisemar
-// import logo from '../../images/logo_multisemar.png'
-
 // icons
 import { Menu, X, Phone } from 'lucide-react'
 
@@ -40,8 +37,7 @@ function Header() {
             <div className={`w-full px-0`}>
                 <nav className={`flex justify-between items-center w-full h-20 px-8 rounded-b-md backdrop-blur-lg transition-all duration-500 ${scroll ? 'bg-[#E6F6FE]' : 'bg-transparent'}`}>
                     <div className='text-2xl font-bold flex items-center'>
-                        {/* <Image src={logo} alt="Logo Multisemar" width={150} height={50} /> */}
-                        <span>Multisemar</span>
+                        <span className='text-secondary'>Multiservicios Martínez</span>
                     </div>
                     <ul className='lg:flex gap-8 font-semibold text-base hidden'>
                         <motion.li whileHover={{ scale: 1.1 }} className='text-sm'>
@@ -61,11 +57,11 @@ function Header() {
                     <div className='hidden lg:flex items-center gap-4'>
                         <motion.a
                             whileHover={{ scale: 1.05 }}
-                            href="tel:+18095567890"
+                            href="tel:8095508815"
                             className='flex items-center gap-2 text-primary font-semibold'
                         >
                             <Phone size={18} />
-                            <span>(809) 556-7890</span>
+                            <span>809-550-8815</span>
                         </motion.a>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
@@ -98,12 +94,21 @@ function Header() {
                         </motion.li>
                         <motion.a
                             whileHover={{ scale: 1.05 }}
-                            href="tel:+18095567890"
+                            href="tel:8095508815"
                             className='flex items-center gap-2 text-primary font-semibold py-2'
                             onClick={handleMenu}
                         >
                             <Phone size={18} />
-                            <span>(809) 556-7890</span>
+                            <span>809-550-8815</span>
+                        </motion.a>
+                        <motion.a
+                            whileHover={{ scale: 1.05 }}
+                            href="tel:8295238815"
+                            className='flex items-center gap-2 text-primary font-semibold py-2'
+                            onClick={handleMenu}
+                        >
+                            <Phone size={18} />
+                            <span>829-523-8815</span>
                         </motion.a>
                         <motion.button
                             whileHover={{ scale: 1.05 }}
