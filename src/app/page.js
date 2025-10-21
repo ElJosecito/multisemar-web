@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import {
   // Icons for services
   Users,
@@ -125,6 +126,99 @@ const servicesData = [
 ];
 
 export default function HomePage() {
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    service: '',
+    message: ''
+  });
+  
+  const [formStatus, setFormStatus] = useState({
+    isSubmitting: false,
+    isSuccess: false,
+    error: null
+  });
+
+  // Handle form input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear error when user starts typing
+    if (formStatus.error) {
+      setFormStatus(prev => ({ ...prev, error: null }));
+    }
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setFormStatus({
+        isSubmitting: false,
+        isSuccess: false,
+        error: 'Por favor complete todos los campos obligatorios'
+      });
+      return;
+    }
+
+    setFormStatus({
+      isSubmitting: true,
+      isSuccess: false,
+      error: null
+    });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setFormStatus({
+          isSubmitting: false,
+          isSuccess: true,
+          error: null
+        });
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setFormStatus({
+          isSubmitting: false,
+          isSuccess: false,
+          error: result.error || 'Error al enviar el formulario'
+        });
+      }
+    } catch (error) {
+      setFormStatus({
+        isSubmitting: false,
+        isSuccess: false,
+        error: 'Error de conexión. Por favor intente nuevamente.'
+      });
+    }
+  };
+
   return (
     <>
       <Header />
@@ -738,7 +832,9 @@ export default function HomePage() {
               className="xl:w-3/5 w-full"
             >
               <div className="bg-white border-2 border-gray-200 rounded-3xl p-10 lg:p-16 hover:border-primary/30 transition-colors duration-300">
-                <form className="space-y-8">
+                {/* Alerts moved below submit button */}
+
+                <form className="space-y-8" onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <motion.div 
                       whileHover={{ y: -2 }}
@@ -752,7 +848,10 @@ export default function HomePage() {
                         type="text" 
                         id="name" 
                         name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         placeholder="Ingrese su nombre completo"
+                        required
                       />
                     </motion.div>
                     
@@ -768,7 +867,10 @@ export default function HomePage() {
                         type="email" 
                         id="email" 
                         name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         placeholder="su.correo@empresa.com"
+                        required
                       />
                     </motion.div>
                   </div>
@@ -786,6 +888,8 @@ export default function HomePage() {
                         type="tel" 
                         id="phone" 
                         name="phone"
+                        value={formData.phone}
+                        onChange={handleInputChange}
                         placeholder="809-550-8815"
                       />
                     </motion.div>
@@ -802,6 +906,8 @@ export default function HomePage() {
                         type="text" 
                         id="company" 
                         name="company"
+                        value={formData.company}
+                        onChange={handleInputChange}
                         placeholder="Su Empresa S.R.L."
                       />
                     </motion.div>
@@ -818,12 +924,15 @@ export default function HomePage() {
                       className="w-full bg-gray-50 border-2 border-gray-200 rounded-2xl p-5 text-lg transition-all duration-300 focus:outline-none focus:border-primary focus:bg-white hover:border-primary/50 placeholder-gray-500" 
                       id="service" 
                       name="service"
+                      value={formData.service}
+                      onChange={handleInputChange}
+                      required
                     >
                       <option value="">Seleccione un servicio</option>
-                      <option value="infraestructura">Infraestructura Civil</option>
-                      <option value="electromecanica">Ingeniería Electromecánica</option>
-                      <option value="industrial">Servicios Industriales</option>
-                      <option value="gruas">Alquiler de Grúas</option>
+                      <option value="Infraestructura Civil">Infraestructura Civil</option>
+                      <option value="Ingeniería Electromecánica">Ingeniería Electromecánica</option>
+                      <option value="Servicios Industriales">Servicios Industriales</option>
+                      <option value="Alquiler de Grúas">Alquiler de Grúas</option>
                     </select>
                   </motion.div>
                   
@@ -839,19 +948,61 @@ export default function HomePage() {
                       id="message" 
                       name="message" 
                       rows="6"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       placeholder="Describa su proyecto o necesidad y cómo podemos ayudarle..."
+                      required
                     ></textarea>
                   </motion.div>
                   
                   <motion.button
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    whileTap={{ scale: 0.98 }}
+                    whileHover={{ scale: formStatus.isSubmitting ? 1 : 1.02, y: formStatus.isSubmitting ? 0 : -2 }}
+                    whileTap={{ scale: formStatus.isSubmitting ? 1 : 0.98 }}
                     type="submit"
-                    className="w-full bg-primary text-white rounded-2xl py-5 px-8 font-black text-xl border-2 border-primary hover:bg-transparent hover:text-primary transition-all duration-300 flex items-center justify-center gap-3"
+                    disabled={formStatus.isSubmitting}
+                    className={`w-full rounded-2xl py-5 px-8 font-black text-xl border-2 transition-all duration-300 flex items-center justify-center gap-3 ${
+                      formStatus.isSubmitting 
+                        ? 'bg-gray-400 text-white border-gray-400 cursor-not-allowed' 
+                        : 'bg-primary text-white border-primary hover:bg-transparent hover:text-primary'
+                    }`}
                   >
-                    Enviar Mensaje
-                    <ArrowRight className="size-6" />
+                    {formStatus.isSubmitting ? (
+                      <>
+                        <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                        Enviando...
+                      </>
+                    ) : (
+                      <>
+                        Enviar Mensaje
+                        <ArrowRight className="size-6" />
+                      </>
+                    )}
                   </motion.button>
+
+                  {/* Success Message (moved below submit) */}
+                  {formStatus.isSuccess && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-6 p-4 bg-green-100 border-2 border-green-300 rounded-2xl text-green-800"
+                    >
+                      <p className="font-semibold">¡Mensaje enviado correctamente!</p>
+                      <p className="text-sm">Nos pondremos en contacto contigo pronto.</p>
+                    </motion.div>
+                  )}
+
+                  {/* Error Message (moved below submit) */}
+                  {formStatus.error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-6 p-4 bg-red-100 border-2 border-red-300 rounded-2xl text-red-800"
+                    >
+                      <p className="font-semibold">Error:</p>
+                      <p className="text-sm">{formStatus.error}</p>
+                    </motion.div>
+                  )}
+
                 </form>
               </div>
             </motion.div>
