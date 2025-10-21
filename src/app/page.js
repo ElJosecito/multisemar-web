@@ -170,52 +170,36 @@ export default function HomePage() {
       return;
     }
 
-    setFormStatus({
-      isSubmitting: true,
-      isSuccess: false,
-      error: null
-    });
+    // For now open user's email client with a mailto: link so office can handle sending.
+    // Keep backend intact for future server-side sending.
+    setFormStatus({ isSubmitting: true, isSuccess: false, error: null });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const recipient = 'multiserviciosmartinez@hotmail.com';
+      const subject = `Consulta: ${formData.service || 'General'} - ${formData.name}`;
+      const bodyLines = [
+        `Nombre: ${formData.name}`,
+        `Email: ${formData.email}`,
+        formData.phone ? `Teléfono: ${formData.phone}` : null,
+        formData.company ? `Empresa: ${formData.company}` : null,
+        `\nMensaje:`,
+        formData.message || '',
+        '\n---',
+        'Enviado desde el formulario web de Multiservicios Martínez'
+      ].filter(Boolean).join('\n');
 
-      const result = await response.json();
+      const mailto = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines)}`;
 
-      if (response.ok) {
-        setFormStatus({
-          isSubmitting: false,
-          isSuccess: true,
-          error: null
-        });
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          company: '',
-          service: '',
-          message: ''
-        });
-      } else {
-        setFormStatus({
-          isSubmitting: false,
-          isSuccess: false,
-          error: result.error || 'Error al enviar el formulario'
-        });
-      }
+      // Open mail client in new tab/window. Some clients will open desktop mail app.
+      window.open(mailto);
+
+      // Set success state (inform user to complete/send in their mail client)
+      setFormStatus({ isSubmitting: false, isSuccess: true, error: null });
+
+      // Reset form fields
+      setFormData({ name: '', email: '', phone: '', company: '', service: '', message: '' });
     } catch (error) {
-      setFormStatus({
-        isSubmitting: false,
-        isSuccess: false,
-        error: 'Error de conexión. Por favor intente nuevamente.'
-      });
+      setFormStatus({ isSubmitting: false, isSuccess: false, error: 'No se pudo abrir el cliente de correo. Por favor intente manualmente.' });
     }
   };
 
