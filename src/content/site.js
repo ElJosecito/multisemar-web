@@ -1,4 +1,6 @@
 export const site = {
+  url: 'https://multisemar.com',
+  locale: 'es_DO',
   brand: {
     name: 'Multisemar',
     legalName: 'Multiservicios Martínez',
@@ -13,7 +15,13 @@ export const site = {
     whatsapp: 'https://wa.me/18295238815',
     email: 'multiserviciosmartinez@hotmail.com',
     country: 'República Dominicana',
+    countryCode: 'DO',
     coverage: 'Nacional R.D.',
+  },
+  seo: {
+    defaultOgImage: '/images/multisemar-grua-yard.jpg',
+    themeColor: '#E1261C',
+    keywords: 'Multisemar, Multiservicios Martínez, infraestructura civil, ingeniería electromecánica, servicios industriales, refrigeración industrial, generadores de emergencia, grúa 17 toneladas, automatización industrial, naves industriales, República Dominicana, contratista industrial RD',
   },
   nav: [
     { href: '/#inicio', label: 'Inicio', match: 'home-hash' },

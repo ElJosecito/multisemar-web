@@ -1,25 +1,64 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { site } from '../content/site.js';
 
 const {
   title = 'Multisemar — Infraestructura, Electromecánica y Servicios Industriales · República Dominicana',
   description = 'Más de 25 años entregando infraestructura civil, ingeniería electromecánica y servicios industriales en República Dominicana. Operaciones a nivel nacional desde 1996.',
   active = 'home',
+  ogImage = site.seo.defaultOgImage,
+  jsonLd = null,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const ogImageUrl = new URL(ogImage, site.url).href;
 ---
 <!doctype html>
-<html lang="es">
+<html lang="es-DO">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <meta name="keywords" content={site.seo.keywords} />
+  <meta name="author" content={`${site.brand.name} · ${site.brand.legalName}`} />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content={site.seo.themeColor} />
+  <meta name="geo.region" content="DO" />
+  <meta name="geo.placename" content="República Dominicana" />
+  <link rel="canonical" href={canonical} />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.brand.name} />
+  <meta property="og:locale" content={site.locale} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={`${site.brand.name} — Servicios industriales en República Dominicana`} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-mark.svg" />
+  <link rel="apple-touch-icon" href="/assets/logo-mark.svg" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/svg+xml" href="/assets/logo-mark.svg" />
+
   <link rel="stylesheet" href="/assets/styles.css" />
+
+  {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 </head>
 <body>
   <Header active={active} />
