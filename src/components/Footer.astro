@@ -1,0 +1,71 @@
+---
+import { site } from '../content/site.js';
+---
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <div class="brand" style="color:#fff;">
+          <span class="brand__mark"><img src="/assets/logo-mark.svg" alt={site.brand.name}></span>
+          <span class="brand__name" style="color:#fff;">{site.brand.name}<small style="color:#6B6E76;">{site.brand.tagline}</small></span>
+        </div>
+        <p style="margin-top:24px; font-size:14px; max-width: 38ch;">
+          Multisemar entrega soluciones integrales en construcción e ingeniería industrial.
+          Operando con compromiso y precisión técnica desde {site.brand.since}.
+        </p>
+      </div>
+      <div>
+        <h5>Navegación</h5>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <li><a href="/#inicio">Inicio</a></li>
+          <li><a href="/#nosotros">Nosotros</a></li>
+          <li><a href="/services">Servicios</a></li>
+          <li><a href="/projects">Proyectos</a></li>
+          <li><a href="/#por-que">Por Qué Nosotros</a></li>
+          <li><a href="/#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Servicios</h5>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <li><a href="/services#civil">Infraestructura Civil</a></li>
+          <li><a href="/services#electromecanica">Ingeniería Electromecánica</a></li>
+          <li><a href="/services#industrial">Servicios Industriales</a></li>
+          <li><a href="/services#electromecanica">Refrigeración y A/C</a></li>
+          <li><a href="/services#electromecanica">Generadores de Emergencia</a></li>
+          <li><a href="/services#industrial">Alquiler de Grúa 17T</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;">
+          <li>Tel: {site.contact.phone}</li>
+          <li>Cel: {site.contact.mobile}</li>
+          <li><a href={`mailto:${site.contact.email}`}>{site.contact.email}</a></li>
+          <li>{site.contact.country}</li>
+        </ul>
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn">in</a>
+          <a href="#" aria-label="Facebook">fb</a>
+          <a href="#" aria-label="Instagram">ig</a>
+          <a href={site.contact.whatsapp} aria-label="WhatsApp">wa</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bar">
+      <span>© 2026 {site.brand.name} · {site.brand.legalName} · Todos los derechos reservados</span>
+      <span>{site.contact.country}</span>
+      <span>Operando desde {site.brand.since}</span>
+    </div>
+  </div>
+</footer>
+
+<style is:global>
+  .footer__grid { display: grid; grid-template-columns: 1.4fr 0.8fr 1fr 1fr; gap: 40px; }
+  @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .footer__grid { grid-template-columns: 1fr; } }
+  .footer__brand .brand__mark { background: transparent; }
+  .footer__social { display: flex; gap: 8px; margin-top: 20px; }
+  .footer__social a { width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid #1B1D22; font-family: var(--sans); font-weight: 600; font-size: 11px; text-transform: uppercase; transition: background .15s ease, border-color .15s ease; }
+  .footer__social a:hover { background: var(--red); border-color: var(--red); color: #fff; }
+</style>
