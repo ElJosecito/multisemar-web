@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://multisemar.com/sitemap-index.xml

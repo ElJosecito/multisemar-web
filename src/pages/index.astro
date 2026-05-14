@@ -1,7 +1,62 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site.js';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site.url}/#business`,
+  name: site.brand.name,
+  alternateName: site.brand.legalName,
+  description: 'Empresa dominicana con más de 25 años en infraestructura civil, ingeniería electromecánica y servicios industriales. Operaciones a nivel nacional desde 1996.',
+  url: site.url,
+  logo: `${site.url}/assets/logo-full.svg`,
+  image: `${site.url}${site.seo.defaultOgImage}`,
+  foundingDate: '1996',
+  telephone: site.contact.phoneTel,
+  email: site.contact.email,
+  priceRange: '$$',
+  address: {
+    '@type': 'PostalAddress',
+    addressCountry: site.contact.countryCode,
+    addressRegion: 'República Dominicana',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'República Dominicana',
+  },
+  openingHoursSpecification: [{
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '08:00',
+    closes: '17:00',
+  }],
+  contactPoint: [{
+    '@type': 'ContactPoint',
+    telephone: site.contact.phoneTel,
+    contactType: 'customer service',
+    areaServed: 'DO',
+    availableLanguage: ['Spanish'],
+  }, {
+    '@type': 'ContactPoint',
+    telephone: site.contact.mobileTel,
+    contactType: 'sales',
+    areaServed: 'DO',
+    availableLanguage: ['Spanish'],
+  }],
+  sameAs: [site.contact.whatsapp],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios Multisemar',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Infraestructura Civil', description: 'Construcción, mantenimiento y obras civiles para proyectos residenciales, industriales y comerciales.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Ingeniería Electromecánica', description: 'Servicios eléctricos, automatización, refrigeración y mantenimiento técnico.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Servicios Industriales', description: 'Naves industriales, metalurgia, mecanizados y alquiler de grúa 17 toneladas.' } },
+    ],
+  },
+};
 ---
-<BaseLayout active="home">
+<BaseLayout active="home" jsonLd={jsonLd}>
 
 <!-- ============== HERO ============== -->
 <section id="inicio" class="hero">
