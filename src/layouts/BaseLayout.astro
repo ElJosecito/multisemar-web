@@ -1,0 +1,97 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const {
+  title = 'Multisemar — Infraestructura, Electromecánica y Servicios Industriales · República Dominicana',
+  description = 'Más de 25 años entregando infraestructura civil, ingeniería electromecánica y servicios industriales en República Dominicana. Operaciones a nivel nacional desde 1996.',
+  active = 'home',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo-mark.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <Header active={active} />
+  <slot />
+  <Footer />
+
+  <script>
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Marquee duplicate for seamless loop
+    document.querySelectorAll('.marquee__track').forEach((track) => {
+      track.innerHTML += track.innerHTML;
+    });
+
+    // Contact form → mailto
+    const form = document.querySelector('form[data-quote-form]');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        const nombre = (fd.get('nombre') || '').toString().trim();
+        const empresa = (fd.get('empresa') || '').toString().trim();
+        const telefono = (fd.get('telefono') || '').toString().trim();
+        const correo = (fd.get('correo') || '').toString().trim();
+        const servicio = (fd.get('servicio') || '').toString().trim();
+        const mensaje = (fd.get('mensaje') || '').toString().trim();
+
+        const subject = `Solicitud de cotización — ${servicio || 'General'} (${nombre || 'Cliente'})`;
+        const bodyLines = [
+          `Nombre: ${nombre}`,
+          empresa ? `Empresa: ${empresa}` : null,
+          `Teléfono: ${telefono}`,
+          `Correo: ${correo}`,
+          `Servicio: ${servicio}`,
+          '',
+          'Mensaje:',
+          mensaje,
+        ].filter(Boolean);
+        const body = bodyLines.join('\n');
+
+        const mailto = `mailto:multiserviciosmartinez@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        const btn = form.querySelector('button[type=submit]');
+        if (btn) {
+          const original = btn.innerHTML;
+          btn.innerHTML = 'Abriendo correo…';
+          btn.disabled = true;
+          window.location.href = mailto;
+          setTimeout(() => {
+            btn.innerHTML = '✓ Cliente de correo abierto';
+            setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 2800);
+          }, 600);
+        } else {
+          window.location.href = mailto;
+        }
+      });
+    }
+
+    // Project filters (only present on /projects)
+    document.querySelectorAll('.filter').forEach((b) => b.addEventListener('click', () => {
+      document.querySelectorAll('.filter').forEach((x) => x.classList.remove('is-on'));
+      b.classList.add('is-on');
+    }));
+  </script>
+</body>
+</html>

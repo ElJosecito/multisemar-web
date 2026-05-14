@@ -1,0 +1,573 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout active="home">
+
+<!-- ============== HERO ============== -->
+<section id="inicio" class="hero">
+  <div class="wrap hero__wrap">
+    <div class="hero__meta reveal">
+      <span class="eyebrow"><span class="bar"></span>Multisemar · Desde 1996 · República Dominicana</span>
+    </div>
+    <div class="hero__grid">
+      <div class="hero__copy reveal">
+        <h1 class="h-display" style="font-size: clamp(44px, 6vw, 88px); line-height: 1.02;">
+          Bienvenidos a <span class="h-italic-accent">Multisemar.</span>
+        </h1>
+        <p class="lede" style="margin-top:32px;">
+          Más de 25 años entregando infraestructura civil, ingeniería electromecánica y servicios
+          industriales a empresas, constructoras y particulares en todo el territorio dominicano.
+        </p>
+        <div class="hero__ctas">
+          <a href="#cotizar" class="btn btn-red">Solicitar Cotización <span class="arrow">→</span></a>
+          <a href="/services" class="btn btn-ghost">Explorar Servicios <span class="arrow">→</span></a>
+        </div>
+        <div class="hero__credentials">
+          <div><span class="cred-num">1996</span><span class="cred-lbl">Año de fundación</span></div>
+          <div><span class="cred-num">RD</span><span class="cred-lbl">Cobertura nacional</span></div>
+          <div><span class="cred-num">3</span><span class="cred-lbl">Áreas de especialización</span></div>
+        </div>
+      </div>
+      <aside class="hero__visual reveal">
+        <div class="hero__photo imgph">
+          <img class="imgph__img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80" alt="Grúa de servicio pesado en obra industrial" loading="lazy">
+          <div class="imgph__caption">FOTO · Grúa de servicio pesado en obra industrial</div>
+        </div>
+        <div class="hero__photo hero__photo--small imgph imgph--paper">
+          <img class="imgph__img" src="/images/multisemar-corte-metal.jpg" alt="Corte y metalurgia industrial Multisemar" loading="lazy">
+          <div class="imgph__caption">FOTO · Corte y metalurgia industrial</div>
+        </div>
+        <div class="hero__badge">
+          <span class="hero__badge-num">25</span>
+          <span class="hero__badge-txt">años<br/>en operación<br/>continua</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero__stats reveal">
+      <div class="hstat"><span class="hstat__n">25+</span><span class="hstat__l">Años de experiencia</span></div>
+      <div class="hstat"><span class="hstat__n">100+</span><span class="hstat__l">Proyectos completados</span></div>
+      <div class="hstat"><span class="hstat__n">3</span><span class="hstat__l">Áreas de especialización</span></div>
+      <div class="hstat"><span class="hstat__n">RD</span><span class="hstat__l">Cobertura nacional</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MARQUEE ============== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Infraestructura Civil</span>
+    <span class="marquee__item">Ingeniería Electromecánica</span>
+    <span class="marquee__item">Servicios Industriales</span>
+    <span class="marquee__item">Refrigeración y Cuartos Fríos</span>
+    <span class="marquee__item">Generadores de Emergencia</span>
+    <span class="marquee__item">Automatización y Domótica</span>
+    <span class="marquee__item">Naves Industriales</span>
+    <span class="marquee__item">Grúa de 17 Toneladas</span>
+  </div>
+</div>
+
+<!-- ============== ABOUT ============== -->
+<section id="nosotros" class="section">
+  <div class="wrap">
+    <div class="about__grid">
+      <div class="about__left reveal">
+        <span class="eyebrow"><span class="num">01</span><span class="bar"></span>Sobre nosotros</span>
+        <h2 class="h-1" style="margin-top:24px;">
+          Multisemar: servicios industriales construidos sobre <span class="h-italic-accent">ejecución impecable.</span>
+        </h2>
+      </div>
+      <div class="about__right reveal">
+        <p class="lede">
+          Multisemar — Multiservicios Martínez — es una empresa dominicana con más de dos décadas
+          ofreciendo servicios integrales de infraestructura civil, electromecánica y mantenimiento
+          industrial en todo el territorio nacional.
+        </p>
+        <p style="margin-top:20px; color: var(--muted);">
+          Combinamos experiencia técnica, calidad operativa y cobertura nacional para ejecutar
+          proyectos residenciales, industriales y comerciales con responsabilidad técnica y compromiso
+          ambiental.
+        </p>
+        <div class="about__pillars">
+          <div><span class="pillar__num">01</span><h4 class="h-3">Alta calidad</h4><p>Estándares técnicos exigentes en cada servicio. Desde la cotización hasta la entrega.</p></div>
+          <div><span class="pillar__num">02</span><h4 class="h-3">Experiencia</h4><p>Más de 25 años en proyectos civiles, electromecánicos e industriales en R.D.</p></div>
+          <div><span class="pillar__num">03</span><h4 class="h-3">Compromiso ambiental</h4><p>Prácticas responsables con el entorno en cada obra y mantenimiento.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== SERVICES ============== -->
+<section id="servicios" class="section section--paper2">
+  <div class="wrap">
+    <div class="svc-head reveal">
+      <div>
+        <span class="eyebrow"><span class="num">02</span><span class="bar"></span>Capacidades</span>
+        <h2 class="h-1" style="margin-top:24px;">
+          Tres áreas. <span class="h-italic-accent">Una sola</span> empresa.
+        </h2>
+      </div>
+      <p class="lede" style="max-width:46ch;">
+        De obra civil a electromecánica industrial — cubrimos el ciclo completo de un proyecto sin
+        necesidad de múltiples contratistas, en toda la República Dominicana.
+      </p>
+    </div>
+
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="svc__head"><span class="svc__num">01</span><span class="svc__tag">Civil</span></div>
+        <h3 class="h-3">Infraestructura Civil</h3>
+        <p>Construcción, mantenimiento y obras civiles para proyectos residenciales, industriales y comerciales.</p>
+        <ul class="svc__list">
+          <li>Construcción de casetas y localidades</li>
+          <li>Cercados perimetrales</li>
+          <li>Imbornales y registros sanitarios/eléctricos</li>
+          <li>Reparación de estructuras metálicas</li>
+          <li>Fabricación e instalación de canaletas</li>
+          <li>Pintura, plomería y trabajos en madera</li>
+          <li>Estructuras aligeradas</li>
+          <li>Mantenimiento de áreas verdes y limpieza</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__head"><span class="svc__num">02</span><span class="svc__tag">Electromecánica</span></div>
+        <h3 class="h-3">Ingeniería Electromecánica</h3>
+        <p>Servicios eléctricos, automatización, refrigeración y mantenimiento técnico residencial e industrial.</p>
+        <ul class="svc__list">
+          <li>Facilidades eléctricas residenciales e industriales</li>
+          <li>Automatización industrial y domótica</li>
+          <li>Refrigeración: chillers, VRF, cuartos fríos</li>
+          <li>Generadores de emergencia — instalación y mantenimiento</li>
+          <li>Sistemas de purificación y ósmosis inversa</li>
+          <li>Bombas, motores y maquinaria industrial</li>
+          <li>Seguridad electrónica: cámaras y alarmas</li>
+          <li>Ascensores y elevadores de carga</li>
+        </ul>
+      </article>
+
+      <article class="svc reveal">
+        <div class="svc__head"><span class="svc__num">03</span><span class="svc__tag">Industrial</span></div>
+        <h3 class="h-3">Servicios Industriales</h3>
+        <p>Soluciones especializadas para industrias, manufactura y proyectos de gran escala.</p>
+        <ul class="svc__list">
+          <li>Diseño y construcción de naves industriales</li>
+          <li>Mantenimiento de naves industriales</li>
+          <li>Metalurgia y mecanizados</li>
+          <li>Corte computarizado</li>
+          <li>Sistemas hidráulicos y neumáticos</li>
+          <li>Ayudas visuales para aeropuertos</li>
+          <li>Alquiler de grúa de 17 toneladas</li>
+          <li>Asistencia operativa especializada</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="svc-foot reveal">
+      <p>¿Necesita un alcance específico? Cotizamos proyectos integrales y servicios individuales.</p>
+      <a href="/services" class="btn btn-ink">Ver catálogo completo <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== WHY US ============== -->
+<section id="por-que" class="section section--ink">
+  <div class="wrap">
+    <div class="why__head reveal">
+      <span class="eyebrow"><span class="num" style="color:#fff;opacity:.5">03</span><span class="bar"></span>Por qué nosotros</span>
+      <h2 class="h-1" style="margin-top:24px; max-width: 18ch;">
+        25 años demostrando <span class="h-italic-accent">calidad.</span>
+      </h2>
+    </div>
+
+    <div class="why__grid">
+      <div class="why__left reveal">
+        <div class="why__photo imgph">
+          <img class="imgph__img" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80" alt="Equipo técnico en planta industrial" loading="lazy">
+          <div class="imgph__caption">FOTO · Equipo técnico en planta industrial</div>
+        </div>
+        <div class="why__bigstats">
+          <div><span class="stat__num" style="color:#fff;">25<span style="color:var(--red);">+</span></span><span class="stat__label">Años de operación continua</span></div>
+          <div><span class="stat__num" style="color:#fff;">100<span style="color:var(--red);">+</span></span><span class="stat__label">Proyectos completados</span></div>
+        </div>
+      </div>
+
+      <ul class="why__list reveal">
+        <li><span class="why__n">01</span><div><strong>Más de 25 años de experiencia</strong><p>Operando en República Dominicana desde 1996 con más de 100 proyectos entregados.</p></div></li>
+        <li><span class="why__n">02</span><div><strong>Tres áreas integradas</strong><p>Civil, electromecánica e industrial bajo un mismo equipo. Sin coordinación cruzada.</p></div></li>
+        <li><span class="why__n">03</span><div><strong>Personal técnico capacitado</strong><p>Equipos propios con experiencia comprobada en cada disciplina.</p></div></li>
+        <li><span class="why__n">04</span><div><strong>Cobertura nacional</strong><p>Operaciones en todo el territorio dominicano, incluyendo zonas industriales y turísticas.</p></div></li>
+        <li><span class="why__n">05</span><div><strong>Compromiso ambiental</strong><p>Prácticas responsables con el entorno en cada obra y mantenimiento.</p></div></li>
+        <li><span class="why__n">06</span><div><strong>Calidad operativa</strong><p>Estándares técnicos exigentes desde la cotización hasta la entrega final.</p></div></li>
+        <li><span class="why__n">07</span><div><strong>Servicio mixto</strong><p>Atendemos clientes residenciales, comerciales e industriales en un mismo equipo.</p></div></li>
+        <li><span class="why__n">08</span><div><strong>Grúa propia 17T</strong><p>Servicio de grúa en alquiler con operador, plan de izaje y cobertura nacional.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============== PROJECTS ============== -->
+<section id="proyectos" class="section">
+  <div class="wrap">
+    <div class="prj-head reveal">
+      <div>
+        <span class="eyebrow"><span class="num">04</span><span class="bar"></span>Proyectos seleccionados</span>
+        <h2 class="h-1" style="margin-top:24px;">Una muestra de lo <span class="h-italic-accent">entregado.</span></h2>
+      </div>
+      <a href="/projects" class="btn btn-ghost">Ver todos los proyectos <span class="arrow">→</span></a>
+    </div>
+
+    <div class="prj-grid">
+      <a href="/projects" class="prj prj--lg reveal">
+        <div class="prj__photo imgph">
+          <img class="imgph__img" src="https://images.pexels.com/photos/32390903/pexels-photo-32390903.jpeg?auto=format&fit=crop&w=1920&q=80" alt="Nave industrial en construcción · estructura metálica" loading="lazy">
+          <div class="imgph__caption">FOTO · Nave industrial en construcción · estructura metálica</div>
+        </div>
+        <div class="prj__meta">
+          <span class="prj__tag">2024 · Industrial</span>
+          <h3 class="h-3">Construcción de Nave Industrial</h3>
+          <p>Desarrollo civil y estructural completo para centro de operaciones · Manufacturas del Caribe.</p>
+        </div>
+      </a>
+
+      <a href="/projects" class="prj reveal">
+        <div class="prj__photo imgph imgph--paper">
+          <img class="imgph__img" src="https://images.pexels.com/photos/17072947/pexels-photo-17072947.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Cableado eléctrico industrial · modernización" loading="lazy">
+          <div class="imgph__caption">FOTO · Cableado eléctrico industrial · modernización</div>
+        </div>
+        <div class="prj__meta">
+          <span class="prj__tag">2023 · Manufactura</span>
+          <h3 class="h-3">Modernización Eléctrica</h3>
+          <p>Instalación industrial de alta capacidad y modernización de tableros · Grupo Industrial Romana.</p>
+        </div>
+      </a>
+
+      <a href="/projects" class="prj reveal">
+        <div class="prj__photo imgph">
+          <img class="imgph__img" src="https://images.pexels.com/photos/11925463/pexels-photo-11925463.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Cableado eléctrico de alta capacidad · sistema de respaldo" loading="lazy">
+          <div class="imgph__caption">FOTO · Cableado eléctrico de alta capacidad</div>
+        </div>
+        <div class="prj__meta">
+          <span class="prj__tag">2024 · Hotelero</span>
+          <h3 class="h-3">Sistema de Respaldo Eléctrico</h3>
+          <p>Generador de emergencia con transferencia automática · Hoteles &amp; Resorts La Romana.</p>
+        </div>
+      </a>
+
+      <a href="/projects" class="prj reveal">
+        <div class="prj__photo imgph imgph--red">
+          <img class="imgph__img" src="https://images.pexels.com/photos/13109834/pexels-photo-13109834.jpeg?auto=format&fit=crop&w=1200&q=80" alt="Sala de máquinas · refrigeración industrial" loading="lazy">
+          <div class="imgph__caption">FOTO · Sala de máquinas · refrigeración industrial</div>
+        </div>
+        <div class="prj__meta">
+          <span class="prj__tag">2023 · Manufactura</span>
+          <h3 class="h-3">Mantenimiento Planta de Refrigeración</h3>
+          <p>Mantenimiento integral de chillers y cuartos fríos · Manufacturas del Caribe.</p>
+        </div>
+      </a>
+
+      <a href="/projects" class="prj prj--lg reveal">
+        <div class="prj__photo imgph imgph--paper">
+          <img class="imgph__img" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80" alt="Refuerzo estructural en infraestructura existente" loading="lazy">
+          <div class="imgph__caption">FOTO · Refuerzo estructural en infraestructura existente</div>
+        </div>
+        <div class="prj__meta">
+          <span class="prj__tag">2022 · Inmobiliario</span>
+          <h3 class="h-3">Servicios Eléctricos Residenciales</h3>
+          <p>Facilidades eléctricas e instalaciones integrales para 42 viviendas · Constructora Delmar S.R.L.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== TESTIMONIALS ============== -->
+<section class="section section--paper2">
+  <div class="wrap">
+    <div class="tst-head reveal">
+      <span class="eyebrow"><span class="num">05</span><span class="bar"></span>Lo que dicen nuestros clientes</span>
+      <h2 class="h-1" style="margin-top:24px; max-width: 18ch;">
+        Confianza ganada <span class="h-italic-accent">obra por obra.</span>
+      </h2>
+    </div>
+
+    <div class="tst-grid">
+      <figure class="tst reveal">
+        <blockquote>
+          "Mantenimiento electromecánico continuo durante años. Equipo serio, respuesta rápida y trabajo bien hecho."
+        </blockquote>
+        <figcaption>
+          <div class="tst__avatar"></div>
+          <div>
+            <strong>Grupo Industrial Romana</strong>
+            <span>Cliente recurrente · Manufactura</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="tst reveal">
+        <blockquote>
+          "Servicios eléctricos e instalaciones integrales para nuestros proyectos. Cumplen con plazos y presupuesto."
+        </blockquote>
+        <figcaption>
+          <div class="tst__avatar"></div>
+          <div>
+            <strong>Constructora Delmar S.R.L.</strong>
+            <span>Proyectos inmobiliarios</span>
+          </div>
+        </figcaption>
+      </figure>
+
+      <figure class="tst reveal">
+        <blockquote>
+          "Servicio rápido de grúa, remodelaciones eléctricas y atención a emergencias con generadores. Cien por ciento confiables."
+        </blockquote>
+        <figcaption>
+          <div class="tst__avatar"></div>
+          <div>
+            <strong>Hoteles & Resorts La Romana</strong>
+            <span>Sector hotelero</span>
+          </div>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="tst-logos reveal">
+      <span class="tst-logos__lbl">Han confiado en nosotros</span>
+      <div class="tst-logos__row">
+        <span class="logo-ph">CONSTRUCTORA DELMAR</span>
+        <span class="logo-ph">GRUPO INDUSTRIAL ROMANA</span>
+        <span class="logo-ph">MANUFACTURAS DEL CARIBE</span>
+        <span class="logo-ph">HOTELES & RESORTS LA ROMANA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CTA STRIP ============== -->
+<section class="section section--navy" id="cta-strip">
+  <div class="wrap">
+    <div class="ctas reveal">
+      <div>
+        <span class="eyebrow" style="color:#fff;"><span class="num">06</span><span class="bar"></span>Hablemos</span>
+        <h2 class="h-display" style="font-size: clamp(48px, 6.5vw, 96px); margin-top:24px; max-width: 14ch;">
+          ¿Listo para su <span class="h-italic-accent">próximo proyecto?</span>
+        </h2>
+        <p class="lede" style="margin-top: 28px; max-width: 56ch;">
+          Hable con nuestro equipo hoy y reciba una propuesta profesional adaptada a sus necesidades.
+          Cobertura a nivel nacional en República Dominicana.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top: 40px;">
+          <a href="#cotizar" class="btn btn-red">Solicitar Cotización <span class="arrow">→</span></a>
+          <a href="tel:+18095508815" class="btn btn-white">Llamar ahora · 809-550-8815</a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <div class="cta-side__row"><span>Teléfono</span><strong>809-550-8815</strong></div>
+        <div class="cta-side__row"><span>Celular</span><strong>829-523-8815</strong></div>
+        <div class="cta-side__row"><span>Cobertura</span><strong>Nacional R.D.</strong></div>
+        <div class="cta-side__row"><span>Cotización</span><strong>Sin costo</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== CONTACT ============== -->
+<section id="contacto" class="section" style="padding-bottom: 0;">
+  <div class="wrap">
+    <div class="ct-head reveal">
+      <span class="eyebrow"><span class="num">07</span><span class="bar"></span>Contacto</span>
+      <h2 class="h-1" style="margin-top:24px;">Estamos para <span class="h-italic-accent">ayudarle.</span></h2>
+      <p class="lede" style="margin-top:20px;">Complete el formulario o contáctenos directamente. Recibirá respuesta de un ingeniero — no un bot — en menos de 48 horas hábiles.</p>
+    </div>
+
+    <div class="ct-grid">
+      <form class="ct-form reveal" id="cotizar" data-quote-form>
+        <div class="ct-form__row">
+          <label><span>Nombre completo *</span><input type="text" name="nombre" required placeholder="Ej. Juan Martínez" /></label>
+          <label><span>Empresa</span><input type="text" name="empresa" placeholder="Razón social o nombre comercial" /></label>
+        </div>
+        <div class="ct-form__row">
+          <label><span>Teléfono *</span><input type="tel" name="telefono" required placeholder="809-000-0000" /></label>
+          <label><span>Correo electrónico *</span><input type="email" name="correo" required placeholder="nombre@empresa.com" /></label>
+        </div>
+        <label><span>Servicio requerido *</span>
+          <select name="servicio" required>
+            <option value="">Seleccione un servicio</option>
+            <option>Infraestructura Civil</option>
+            <option>Ingeniería Electromecánica</option>
+            <option>Servicios Industriales</option>
+            <option>Alquiler de grúa (17T)</option>
+            <option>Mantenimiento de generadores</option>
+            <option>Refrigeración / aire acondicionado</option>
+            <option>Proyecto integral / múltiples servicios</option>
+          </select>
+        </label>
+        <label><span>Mensaje *</span><textarea name="mensaje" rows="5" required placeholder="Describa brevemente su proyecto, ubicación y plazo estimado."></textarea></label>
+        <button type="submit" class="btn btn-red ct-form__submit">Enviar solicitud <span class="arrow">→</span></button>
+        <p class="ct-form__note">Al enviar se abrirá su cliente de correo con la solicitud lista para enviar. No compartimos su información.</p>
+      </form>
+
+      <aside class="ct-info reveal">
+        <h3 class="h-3" style="margin-bottom: 4px;">Canales directos</h3>
+        <p style="color: var(--muted); font-size: 14px; margin-bottom: 24px;">Para emergencias y proyectos en curso.</p>
+
+        <a class="ct-info__row" href="https://wa.me/18295238815">
+          <span class="ct-info__lbl">WhatsApp / Celular</span>
+          <span class="ct-info__val">829-523-8815</span>
+          <span class="ct-info__sub">Respuesta rápida en horario laboral</span>
+        </a>
+        <a class="ct-info__row" href="tel:+18095508815">
+          <span class="ct-info__lbl">Teléfono oficina</span>
+          <span class="ct-info__val">809-550-8815</span>
+          <span class="ct-info__sub">Línea principal</span>
+        </a>
+        <a class="ct-info__row" href="mailto:multiserviciosmartinez@hotmail.com">
+          <span class="ct-info__lbl">Email</span>
+          <span class="ct-info__val">multiserviciosmartinez@hotmail.com</span>
+          <span class="ct-info__sub">Cotizaciones y consultas técnicas</span>
+        </a>
+        <div class="ct-info__row">
+          <span class="ct-info__lbl">Cobertura</span>
+          <span class="ct-info__val">República Dominicana</span>
+          <span class="ct-info__sub">Servicios a nivel nacional</span>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  /* Hero */
+  .hero { padding: 56px 0 0; position: relative; }
+  .hero__meta { margin-bottom: 28px; }
+  .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 80px); align-items: end; }
+  @media (max-width: 1000px) { .hero__grid { grid-template-columns: 1fr; } }
+  .hero__copy { padding-bottom: 40px; }
+  .hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+  .hero__credentials { display: flex; flex-wrap: wrap; gap: 28px 40px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .hero__credentials > div { display: flex; flex-direction: column; gap: 4px; }
+  .cred-num { font-family: var(--display); font-weight: 600; font-size: 18px; color: var(--ink-2); letter-spacing: 0.02em; }
+  .cred-lbl { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .hero__visual { position: relative; }
+  .hero__photo { aspect-ratio: 4/5; width: 100%; }
+  .hero__photo--small { position: absolute; right: -12px; top: 60%; width: 46%; aspect-ratio: 4/3; box-shadow: -20px 20px 0 var(--paper); }
+  @media (max-width: 1000px) { .hero__photo { aspect-ratio: 16/10; } .hero__photo--small { display: none; } }
+  .hero__badge { position: absolute; left: -12px; top: 24px; background: var(--red); color: #fff; padding: 18px 22px; display: flex; gap: 12px; align-items: center; box-shadow: 14px 14px 0 var(--ink); }
+  .hero__badge-num { font-family: var(--display); font-weight: 700; font-size: 56px; line-height: 0.9; }
+  .hero__badge-txt { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.4; }
+  .hero__stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 56px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 800px) { .hero__stats { grid-template-columns: repeat(2, 1fr); } }
+  .hstat { background: var(--paper); padding: 28px 24px; display: flex; flex-direction: column; gap: 8px; }
+  .hstat__n { font-family: var(--display); font-weight: 600; font-size: clamp(36px, 4vw, 56px); letter-spacing: -0.03em; line-height: 1; color: var(--ink-2); }
+  .hstat__l { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+  /* About */
+  .about__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
+  @media (max-width: 900px) { .about__grid { grid-template-columns: 1fr; } }
+  .about__pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--line); }
+  @media (max-width: 700px) { .about__pillars { grid-template-columns: 1fr; gap: 20px; } }
+  .about__pillars h4 { margin: 6px 0 8px; }
+  .about__pillars p { color: var(--muted); font-size: 14px; }
+  .pillar__num { font-family: var(--sans); font-weight: 600; font-size: 12px; letter-spacing: 0.14em; color: var(--red); }
+
+  /* Services grid */
+  .svc-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: end; margin-bottom: 64px; }
+  @media (max-width: 900px) { .svc-head { grid-template-columns: 1fr; } }
+  .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  @media (max-width: 1000px) { .svc-grid { grid-template-columns: 1fr; } }
+  .svc { background: var(--paper); padding: 40px 32px 36px; display: flex; flex-direction: column; gap: 16px; transition: background .2s ease; position: relative; min-height: 420px; }
+  .svc:hover { background: #fff; }
+  .svc:hover .svc__num { color: var(--red); }
+  .svc__head { display: flex; align-items: center; justify-content: space-between; }
+  .svc__num { font-family: var(--display); font-weight: 600; font-size: 28px; color: var(--ink-2); transition: color .2s ease; }
+  .svc__tag { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; }
+  .svc h3 { line-height: 1.1; }
+  .svc p { color: var(--muted); font-size: 14px; }
+  .svc__list { list-style: none; padding: 0; margin: 6px 0 0; display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--ink-2); border-top: 1px dashed var(--line); padding-top: 14px; margin-top: auto; }
+  .svc__list li { padding-left: 18px; position: relative; }
+  .svc__list li::before { content: "+"; position: absolute; left: 0; color: var(--red); font-weight: 600; }
+  .svc-foot { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .svc-foot p { color: var(--muted); font-size: 15px; }
+
+  /* Why */
+  .why__head { margin-bottom: 72px; max-width: 760px; }
+  .why__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+  @media (max-width: 1000px) { .why__grid { grid-template-columns: 1fr; } }
+  .why__photo { aspect-ratio: 4/5; }
+  .why__bigstats { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12); }
+  .why__list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  @media (max-width: 700px) { .why__list { grid-template-columns: 1fr; } .why__bigstats { grid-template-columns: 1fr; } }
+  .why__list li { display: grid; grid-template-columns: auto 1fr; gap: 16px; padding: 24px 20px 24px 0; border-top: 1px solid rgba(255,255,255,0.12); }
+  .why__list li:nth-child(odd) { padding-right: 28px; border-right: 1px solid rgba(255,255,255,0.12); }
+  @media (max-width: 700px) { .why__list li:nth-child(odd) { padding-right: 0; border-right: none; } .why__list li { padding-left: 0 !important; } }
+  .why__list li:nth-child(even) { padding-left: 28px; }
+  .why__list li:last-child, .why__list li:nth-last-child(2) { border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .why__n { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; color: var(--red); padding-top: 4px; }
+  .why__list strong { font-family: var(--display); font-weight: 600; font-size: 16px; color: #fff; display: block; margin-bottom: 6px; }
+  .why__list p { color: rgba(255,255,255,0.6); font-size: 13.5px; line-height: 1.55; }
+
+  /* Projects strip */
+  .prj-head { display: flex; flex-wrap: wrap; gap: 20px; align-items: end; justify-content: space-between; margin-bottom: 56px; }
+  .prj-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .prj-grid { grid-template-columns: 1fr; } }
+  .prj { grid-column: span 2; display: flex; flex-direction: column; gap: 18px; transition: transform .25s ease; }
+  .prj--lg { grid-column: span 3; }
+  @media (max-width: 900px) { .prj, .prj--lg { grid-column: span 1; } }
+  .prj:hover { transform: translateY(-4px); }
+  .prj__photo { aspect-ratio: 4/3; }
+  .prj--lg .prj__photo { aspect-ratio: 16/10; }
+  .prj__tag { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+  .prj__meta h3 { margin: 8px 0 8px; }
+  .prj__meta p { color: var(--muted); font-size: 14px; }
+
+  /* Testimonials */
+  .tst-head { margin-bottom: 56px; max-width: 760px; }
+  .tst-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  @media (max-width: 900px) { .tst-grid { grid-template-columns: 1fr; } }
+  .tst { background: var(--paper); padding: 36px 32px; margin: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; min-height: 280px; border-top: 3px solid var(--red); }
+  .tst blockquote { font-family: var(--display); font-weight: 500; font-size: clamp(18px, 1.6vw, 22px); line-height: 1.4; letter-spacing: -0.01em; color: var(--ink-2); margin: 0; }
+  .tst figcaption { display: flex; align-items: center; gap: 14px; }
+  .tst__avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, var(--navy), var(--ink-2)); flex: none; }
+  .tst figcaption strong { display: block; font-family: var(--display); font-weight: 600; font-size: 15px; color: var(--ink-2); }
+  .tst figcaption span { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  .tst-logos { margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 24px; }
+  .tst-logos__lbl { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .tst-logos__row { display: flex; flex-wrap: wrap; gap: 32px 56px; }
+  .logo-ph { font-family: var(--display); font-weight: 700; letter-spacing: 0.04em; font-size: 14px; color: var(--ink-2); opacity: 0.45; transition: opacity .2s ease; }
+  .logo-ph:hover { opacity: 0.9; }
+
+  /* CTA */
+  .ctas { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: clamp(32px, 5vw, 80px); align-items: end; }
+  @media (max-width: 900px) { .ctas { grid-template-columns: 1fr; } }
+  .cta-side { border-left: 1px solid rgba(255,255,255,0.18); padding-left: 32px; display: flex; flex-direction: column; gap: 0; }
+  @media (max-width: 900px) { .cta-side { border-left: none; border-top: 1px solid rgba(255,255,255,0.18); padding-left: 0; padding-top: 24px; } }
+  .cta-side__row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px dashed rgba(255,255,255,0.16); gap: 16px; }
+  .cta-side__row span { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .cta-side__row strong { font-family: var(--display); font-weight: 600; font-size: 16px; color: #fff; }
+
+  /* Contact */
+  .ct-head { max-width: 760px; margin-bottom: 56px; }
+  .ct-grid { display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 32px; padding-bottom: clamp(72px, 9vw, 120px); }
+  @media (max-width: 1000px) { .ct-grid { grid-template-columns: 1fr; } }
+  .ct-form { background: var(--paper-2); padding: clamp(28px, 4vw, 48px); display: flex; flex-direction: column; gap: 20px; }
+  .ct-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 700px) { .ct-form__row { grid-template-columns: 1fr; } }
+  .ct-form label { display: flex; flex-direction: column; gap: 8px; }
+  .ct-form label span { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .ct-form input, .ct-form select, .ct-form textarea { font-family: var(--sans); font-size: 15px; padding: 14px 16px; border: 1px solid var(--line); background: #fff; color: var(--ink-2); border-radius: 0; transition: border-color .15s ease, box-shadow .15s ease; }
+  .ct-form input:focus, .ct-form select:focus, .ct-form textarea:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px rgba(225,38,28,0.12); }
+  .ct-form textarea { resize: vertical; min-height: 120px; font-family: var(--sans); }
+  .ct-form__submit { justify-content: center; padding: 18px 24px; margin-top: 4px; }
+  .ct-form__note { font-size: 12px; color: var(--muted); }
+  .ct-info { background: var(--ink); color: #fff; padding: clamp(28px, 4vw, 40px); }
+  .ct-info h3 { color: #fff; }
+  .ct-info__row { display: grid; padding: 18px 0; border-top: 1px solid rgba(255,255,255,0.12); gap: 4px; }
+  .ct-info a.ct-info__row:hover .ct-info__val { color: var(--red); }
+  .ct-info__lbl { font-family: var(--sans); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); }
+  .ct-info__val { font-family: var(--display); font-weight: 600; font-size: 18px; color: #fff; transition: color .15s ease; word-break: break-word; }
+  .ct-info__sub { font-size: 12.5px; color: rgba(255,255,255,0.55); }
+</style>
+
+</BaseLayout>

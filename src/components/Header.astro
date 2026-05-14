@@ -1,0 +1,24 @@
+---
+import { site } from '../content/site.js';
+const { active = 'home' } = Astro.props;
+---
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a href="/" class="brand" aria-label={site.brand.name}>
+      <span class="brand__mark"><img src="/assets/logo-mark.svg" alt={site.brand.name}></span>
+      <span class="brand__name">{site.brand.name}<small>{site.brand.tagline}</small></span>
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/#inicio" class={active === 'home' ? 'is-active' : ''}>Inicio</a>
+      <a href="/#nosotros">Nosotros</a>
+      <a href="/services" class={active === 'services' ? 'is-active' : ''}>Servicios</a>
+      <a href="/projects" class={active === 'projects' ? 'is-active' : ''}>Proyectos</a>
+      <a href="/#por-que">Por Qué Nosotros</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <div class="header-cta">
+      <span class="phone-pill"><span class="dot"></span>{site.contact.phone} · Rep. Dominicana</span>
+      <a href="/#cotizar" class="btn btn-red">Solicitar Cotización <span class="arrow">→</span></a>
+    </div>
+  </div>
+</header>
