@@ -21,10 +21,18 @@ const jsonLd = {
     addressCountry: site.contact.countryCode,
     addressRegion: 'República Dominicana',
   },
-  areaServed: {
-    '@type': 'Country',
-    name: 'República Dominicana',
-  },
+  areaServed: [
+    { '@type': 'Country', name: 'República Dominicana' },
+    { '@type': 'City', name: 'Santo Domingo' },
+    { '@type': 'City', name: 'Santiago de los Caballeros' },
+    { '@type': 'City', name: 'La Romana' },
+    { '@type': 'City', name: 'Punta Cana' },
+    { '@type': 'City', name: 'Higüey' },
+    { '@type': 'City', name: 'San Pedro de Macorís' },
+    { '@type': 'City', name: 'Puerto Plata' },
+    { '@type': 'City', name: 'Bávaro' },
+    { '@type': 'City', name: 'La Vega' },
+  ],
   openingHoursSpecification: [{
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
@@ -141,7 +149,8 @@ const jsonLd = {
         <p style="margin-top:20px; color: var(--muted);">
           Combinamos experiencia técnica, calidad operativa y cobertura nacional para ejecutar
           proyectos residenciales, industriales y comerciales con responsabilidad técnica y compromiso
-          ambiental.
+          ambiental. Operamos en <strong>Santo Domingo, Santiago, La Romana, Punta Cana, Higüey,
+          San Pedro de Macorís, Puerto Plata</strong> y todo el territorio dominicano.
         </p>
         <div class="about__pillars">
           <div><span class="pillar__num">01</span><h4 class="h-3">Alta calidad</h4><p>Estándares técnicos exigentes en cada servicio. Desde la cotización hasta la entrega.</p></div>
@@ -411,7 +420,7 @@ const jsonLd = {
         </h2>
         <p class="lede" style="margin-top: 28px; max-width: 56ch;">
           Hable con nuestro equipo hoy y reciba una propuesta profesional adaptada a sus necesidades.
-          Cobertura a nivel nacional en República Dominicana.
+          Atendemos proyectos en Santo Domingo, La Romana, Punta Cana, Santiago y todo el territorio dominicano.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top: 40px;">
           <a href="#cotizar" class="btn btn-red">Solicitar Cotización <span class="arrow">→</span></a>
@@ -486,7 +495,7 @@ const jsonLd = {
         <div class="ct-info__row">
           <span class="ct-info__lbl">Cobertura</span>
           <span class="ct-info__val">República Dominicana</span>
-          <span class="ct-info__sub">Servicios a nivel nacional</span>
+          <span class="ct-info__sub">Santo Domingo · Santiago · La Romana · Punta Cana · Higüey · San Pedro de Macorís · Puerto Plata · y todo el territorio nacional</span>
         </div>
       </aside>
     </div>
